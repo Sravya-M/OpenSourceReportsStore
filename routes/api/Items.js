@@ -28,7 +28,7 @@ router.post('/', (req, res) => {
 });
 
 
-// @route 	DELETE api/items
+// @route 	DELETE api/items/:id
 // @desc 	Delete an Item
 // @access 	Public
 
