@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Shopping list built with the MERN stack",
   "main": "server.js",
+  "engine": {
+    "node": "14.2.0",
+    "npm": "6.14.8"
+  },
   "scripts": {
     "client-install": "cd client && npm install",
     "build": "cd client && npm run build",
@@ -10,7 +14,7 @@
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "npm run client-install && npm run build"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "Swati N Murthy",
   "license": "ISC",
