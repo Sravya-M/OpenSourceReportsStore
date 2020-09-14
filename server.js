@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 const db = require('./config/keys').mongoURI;
 
 //Connect to mongo
-mongoose.connect(process.env.mongoURI || db, {
+mongoose.connect(process.env.MONGO_URI || db, {
 	useUnifiedTopology:true,
 	useNewUrlParser: true,
 	useCreateIndex: true
