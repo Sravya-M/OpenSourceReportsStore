@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
 
-const items = require('./routes/api/items');
+const items = require('./routes/api/Items');
 const app = express();
 
 // BodyParser middle ware
@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 const db = require('./config/keys').mongoURI;
 
 //Connect to mongo
-mongoose.connect(process.env.MONGO_URI || db, {
+mongoose.connect(process.env.MONGODB_URI || db, {
 	useUnifiedTopology:true,
 	useNewUrlParser: true,
 	useCreateIndex: true
