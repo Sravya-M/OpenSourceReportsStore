@@ -20,11 +20,24 @@ router.get('/', (req, res) => {
 // @access 	Public
 
 router.post('/', (req, res) => {
-	const newItem = new Item({
-		name: req.body.name
-	});
+	const {name} = req.body;
+	
+	if (!name) {
+		return res.status(400).json({msg: 'Please enter the name'});
+	}
 
-	newItem.save().then(item => res.json(item));
+	Item.findOne({name})
+		.then(item => {
+			if (name) {
+				//alert('Item already exists');
+				return res.status(400).json({msg: 'Item already exists'});
+			}
+			const newItem = new Item({
+				name: req.body.name
+			});
+		
+			newItem.save().then(item => res.json(item));
+		})
 });
 
 
