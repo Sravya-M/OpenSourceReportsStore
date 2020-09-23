@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const auth = require('../../middleware/auth');
 
 // Bring in the item model
 const Item = require('../../models/Item');
@@ -17,9 +18,9 @@ router.get('/', (req, res) => {
 
 // @route 	POST api/items
 // @desc 	Create an Item
-// @access 	Public
+// @access 	Private
 
-router.post('/', (req, res) => {
+router.post('/', auth, (req, res) => {
 	const {name} = req.body;
 	
 	if (!name) {
@@ -28,10 +29,10 @@ router.post('/', (req, res) => {
 
 	Item.findOne({name})
 		.then(item => {
-			if (name) {
-				//alert('Item already exists');
-				return res.status(400).json({msg: 'Item already exists'});
-			}
+			// if (item.name == name) {
+			// 	//alert('Item already exists');
+			// 	return res.status(400).json({msg: 'Item already exists'});
+			// }
 			const newItem = new Item({
 				name: req.body.name
 			});
@@ -43,9 +44,9 @@ router.post('/', (req, res) => {
 
 // @route 	DELETE api/items/:id
 // @desc 	Delete an Item
-// @access 	Public
+// @access 	Private
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', auth, (req, res) => {
 	Item.findById(req.params.id)
 		.then(item => item.remove().then(() => res.json({sucess: true})))
 		.catch(err => res.status(404).json({sucess: false}));
