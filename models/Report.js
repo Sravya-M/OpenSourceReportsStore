@@ -23,6 +23,9 @@ const ReportSchema = new Schema({
 	year: {
 		type: Number,
 		isRequired: true
+	},
+	file: {
+		type: String
 	}
 });
 

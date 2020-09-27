@@ -21,9 +21,10 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
 	const { studentName, semester, category, professorName, year } = req.body;
-
+	console.log(studentName + "\n" + semester + "\n" + category + "\n" + professorName + "\n" + year);
 	if (!studentName || !semester || !category || !professorName || !year) {
-		return res.status(400).json({ msg: 'Please enter the name' });
+
+		return res.status(400).json({ msg: 'Please enter all the details' });
 	}
 
 	const newReport = new Report({
