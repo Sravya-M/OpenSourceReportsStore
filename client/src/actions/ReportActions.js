@@ -16,6 +16,7 @@ export const getReports = () => dispatch => {
 };
 
 export const addReport = (report) => (dispatch, getState) => {
+	debugger;
 	axios
 		.post('/api/reports', report, tokenConfig(getState))
 		.then(res =>

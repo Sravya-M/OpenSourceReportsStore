@@ -5,28 +5,27 @@ const Schema = mongoose.Schema;
 
 const ReportSchema = new Schema({
 	studentName: {
-		type: String,
-		required: true,
+		type: String
 	},
 	semester: {
 		type: Number,
-		required: true
+		default: 1
 	},
 	category: {
-		type: String,
-		isRequired: true
+		type: String
 	},
 	professorName: {
-		type: String,
-		isRequired: true
+		type: String
 	},
 	year: {
 		type: Number,
-		isRequired: true
+		default: 2000
 	},
-	file: {
-		type: String
+	path: {
+		type: String,
+		isRequired: true
 	}
+}, {
+	timestamps: true
 });
-
-module.exports = Report = mongoose.model('report', ReportSchema);
+module.exports = Report = mongoose.model('Report', ReportSchema);

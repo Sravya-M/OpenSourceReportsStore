@@ -3,8 +3,10 @@ import { Container, ListGroup, ListGroupItem, Button, Table } from 'reactstrap';
 import { CSSTransition, CSSTransitionGroup, TransitionGroup } from 'react-transition-group';
 //import {v1 as uuid} from 'uuid'; ////import uuid from 'uuid/dist/v1';
 import { connect } from 'react-redux';
-import { getReports, deleteReport } from '../actions/ReportActions';
 import PropTypes from 'prop-types';
+import { Document, Page } from 'react-pdf';
+
+import { getReports, deleteReport } from '../actions/ReportActions';
 class ReportsList extends Component {
 	// state = {
 	// 	items: [
@@ -27,9 +29,24 @@ class ReportsList extends Component {
 	onDeleteClick = (id) => {
 		this.props.deleteReport(id);
 	}
-	render() {
 
+	importAll = result => {
+		let images = {};
+		result.keys().map((item, index) => {
+			return (images[item.replace("./", "")] = result(item));
+		});
+		return images;
+	};
+
+	render() {
 		const { reports } = this.props.report;
+		debugger;
+		const webpackContext = require.context(
+			"../../../uploads",
+			false,
+			/\.(pdf|PDF)$/
+		);
+		const files = this.importAll(webpackContext);
 		return (
 
 			<Container>
@@ -47,16 +64,24 @@ class ReportsList extends Component {
 												<th>Category</th>
 												<th>Semester</th>
 												<th>Year</th>
+												<th>Report</th>
 											</tr>
 										</thead>
 										<tbody>
-											{reports.map(({ _id, studentName, semester, category, professorName, year }) => (
+											{reports.map(({ _id, studentName, semester, category, professorName, year, path }) => (
 												<tr key={_id}>
 													<th>{studentName}</th>
 													<th>{professorName}</th>
 													<th>{category}</th>
 													<th>{semester}</th>
 													<th>{year}</th>
+													<th><a href={files[`${path}`]} target="_blank">View File</a></th>
+													<th><a href={files[`${path}`]} download>Download</a></th>
+													{/* <th>
+														<div>
+															<embed src={path} width="200px" height="200px" />
+														</div>
+													</th> */}
 												</tr>
 											))}
 										</tbody>
