@@ -24,7 +24,6 @@ mongoose.connect(process.env.MONGODB_URI || db, {
 	.catch(err => console.log(err));
 
 // Use routes
-app.use('/api/items', require('./routes/api/Items'));
 app.use('/api/users', require('./routes/api/Users'));
 app.use('/api/auth', require('./routes/api/auth'));
 app.use('/api/reports', require('./routes/api/reports'));

@@ -8,8 +8,6 @@ import { loadUser } from './actions/authActions';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-//import ItemModal from './components/ItemModal';
-//import ShoppingList from './components/ShoppingList';
 import ReportModal from './components/ReportModal';
 import ReportsList from './components/ReportsList';
 class App extends Component {
@@ -22,9 +20,7 @@ class App extends Component {
         <div className='App'>
           <AppNavbar />
           <Container>
-            {/* <ItemModal /> */}
             <ReportModal />
-            {/* <ShoppingList /> */}
             <ReportsList />
           </Container>
         </div>
