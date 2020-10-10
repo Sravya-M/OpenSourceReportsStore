@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 // @desc 	Create a report
 // @access 	Private
 
-router.post('/', (req, res) => {
+router.post('/', auth, (req, res) => {
 	uploadReports(req, res, err => {
 		console.log("I got here ___");
 		if (err) {
@@ -25,6 +25,9 @@ router.post('/', (req, res) => {
 		} else {
 			console.log(req.body);
 			console.log(req.file);
+			if (!req.file) {
+				return res.status(404).send({ msg: "Report not found" });
+			}
 			var fullPath = req.file.filename;
 			var report = {
 				path: fullPath,
@@ -50,7 +53,7 @@ router.post('/', (req, res) => {
 // @desc 	Delete a Report
 // @access 	Private
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', auth, (req, res) => {
 	Report.findById(req.params.id)
 		.then(report => report.remove().then(() => res.json({ sucess: true })))
 		.catch(err => res.status(404).json({ sucess: false }));
