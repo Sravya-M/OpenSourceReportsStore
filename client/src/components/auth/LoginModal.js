@@ -22,6 +22,8 @@ class LoginModal extends Component {
 		modal: false,
 		email: '',
 		password: '',
+		role: '',
+		adminKey: '',
 		msg: null
 	};
 
@@ -29,11 +31,12 @@ class LoginModal extends Component {
 		isAuthenticated: PropTypes.bool,
 		error: PropTypes.object.isRequired,
 		login: PropTypes.func.isRequired,
+		isAdmin: PropTypes.bool.isRequired,
 		clearErrors: PropTypes.func.isRequired
 	};
 
 	componentDidUpdate(prevProps) {
-		const { error, isAuthenticated } = this.props;
+		const { error, isAuthenticated, isAdmin } = this.props;
 		if (error !== prevProps.error) {
 			// Check for login error
 			if (error.id === 'LOGIN_FAIL') {
@@ -42,10 +45,10 @@ class LoginModal extends Component {
 				this.setState({ msg: null });
 			}
 		}
-
+		debugger;
 		// If Authenticated, close modal
 		if (this.state.modal) {
-			if (isAuthenticated) {
+			if (isAuthenticated && !isAdmin) {
 				this.toggle();
 			}
 		}
@@ -66,14 +69,26 @@ class LoginModal extends Component {
 
 	onSubmit = (e) => {
 		e.preventDefault();
-		const { email, password } = this.state;
+		const { email, password, adminKey } = this.state;
 		const user = {
 			email,
-			password
+			password,
+			adminKey
 		}
+		debugger;
 		//Attempt to login
-		this.props.login(user);
+		this.props.login(user).then(res => {
+			debugger;
+			//this.setState({ role: res.payload.user.role });
+		});
 	}
+
+	adminSubmit = () => {
+		debugger;
+		console.log("I am in adminSubmit");
+
+	}
+
 	render() {
 		return (
 			<div>
@@ -105,11 +120,38 @@ class LoginModal extends Component {
 									className="mb-3"
 									onChange={this.onChange}
 								/>
-								<Button
-									color="dark"
-									style={{ marginTop: '2rem' }}
-									block
-								>Login</Button>
+
+								<div class="row">
+									<div class="col">
+										<Button
+											color="dark"
+											style={{ marginTop: '2rem' }}
+											block
+										>Login</Button>
+									</div>
+
+									{/* AdminKey logic to be added here
+
+									{(this.state.role == 'admin') ? (
+										<div class="col">
+											<Label for="adminKey">Admin Key</Label>
+											<Input
+												type="password"
+												name="adminKey" //should match the state name above
+												id="adminKey"
+												placeholder="Enter Admin key, If you are a student, Ignore this"
+												className="mb-3"
+												onChange={this.onChange}
+											/>
+											<Button
+												color="dark"
+												style={{ marginTop: '2rem' }}
+												onClick={this.adminSubmit}
+												block
+											>Admin Login</Button>
+										</div>
+									) : ''} */}
+								</div>
 							</FormGroup>
 						</Form>
 					</ModalBody>
@@ -120,6 +162,7 @@ class LoginModal extends Component {
 }
 const mapStateToProps = state => ({
 	isAuthenticated: state.auth.isAuthenticated,
+	isAdmin: state.auth.isAdmin,
 	error: state.error
 });
 export default connect(mapStateToProps, { login, clearErrors })(LoginModal);

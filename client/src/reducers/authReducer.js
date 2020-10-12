@@ -12,6 +12,7 @@ import {
 const initialState = {
 	token: localStorage.getItem('token'),
 	isAuthenticated: null,
+	isAdmin: null,
 	isLoading: false,
 	user: null
 };
@@ -24,10 +25,12 @@ export default function (state = initialState, action) {
 				isLoading: true
 			};
 		case USER_LOADED:
+			debugger;
 			return {
 				...state,
 				isAuthenticated: true,
 				isLoading: false,
+				isAdmin: action.payload.role === 'admin' ? true : false,
 				user: action.payload
 			};
 		case LOGIN_SUCCESS:
@@ -37,6 +40,7 @@ export default function (state = initialState, action) {
 				...state,
 				...action.payload,
 				isAuthenticated: true,
+				isAdmin: action.payload.user.role === 'admin' ? true : false,
 				isLoading: false
 			};
 		case AUTH_ERROR:
@@ -48,6 +52,7 @@ export default function (state = initialState, action) {
 				...state,
 				token: null,
 				user: null,
+				isAdmin: false,
 				isAuthenticated: false,
 				isLoading: false
 			};

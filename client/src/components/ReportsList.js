@@ -40,7 +40,6 @@ class ReportsList extends Component {
 
 	render() {
 		const { reports } = this.props.report;
-		debugger;
 		const webpackContext = require.context(
 			"../../../uploads",
 			false,
@@ -68,22 +67,24 @@ class ReportsList extends Component {
 											</tr>
 										</thead>
 										<tbody>
-											{reports.map(({ _id, studentName, semester, category, professorName, year, path }) => (
-												<tr key={_id}>
-													<th>{studentName}</th>
-													<th>{professorName}</th>
-													<th>{category}</th>
-													<th>{semester}</th>
-													<th>{year}</th>
-													<th><a href={files[`${path}`]} target="_blank">View File</a></th>
-													<th><a href={files[`${path}`]} download>Download</a></th>
-													{/* <th>
+											{reports.length == 0 ? <th> No data to display </th> :
+												reports.map(({ _id, studentName, semester, category, professorName, year, path }) => (
+													<tr key={_id}>
+														<th>{studentName}</th>
+														<th>{professorName}</th>
+														<th>{category}</th>
+														<th>{semester}</th>
+														<th>{year}</th>
+														<th><a href={files[`${path}`]} target="_blank">View File</a></th>
+														<th><a href={files[`${path}`]} download>Download</a></th>
+														{/* <th>
 														<div>
 															<embed src={path} width="200px" height="200px" />
 														</div>
 													</th> */}
-												</tr>
-											))}
+													</tr>
+												))
+											}
 										</tbody>
 									</Table>
 								</ListGroupItem>
