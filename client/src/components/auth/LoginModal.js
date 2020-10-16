@@ -45,7 +45,7 @@ class LoginModal extends Component {
 				this.setState({ msg: null });
 			}
 		}
-		debugger;
+//		debugger;
 		// If Authenticated, close modal
 		if (this.state.modal) {
 			if (isAuthenticated && !isAdmin) {
@@ -75,7 +75,7 @@ class LoginModal extends Component {
 			password,
 			adminKey
 		}
-		debugger;
+//		debugger;
 		//Attempt to login
 		this.props.login(user).then(res => {
 			debugger;

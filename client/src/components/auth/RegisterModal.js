@@ -1,5 +1,6 @@
 //To add an item
 import React, { Component } from 'react';
+import axios from 'axios';
 import {
 	Button,
 	Modal,
@@ -16,6 +17,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { register } from '../../actions/authActions';
 import { clearErrors } from '../../actions/errorActions';
+import {ToastsContainer, ToastsStore, ToastsContainerPosition} from 'react-toasts';
+import Countdown from 'react-countdown';
 
 class RegisterModal extends Component {
 	state = {
@@ -23,7 +26,12 @@ class RegisterModal extends Component {
 		name: '',
 		email: '',
 		password: '',
-		msg: null
+		msg: null,
+		otp:'',
+		showMessage: false,
+		confirmPassword: '',
+		isEmailVerified: false,
+		otpSend:false
 	};
 
 	static propTypes = {
@@ -65,22 +73,93 @@ class RegisterModal extends Component {
 		});
 	}
 
+	confirmEmail =()=>{
+		const user = {
+			email: this.state.email,
+		}
+		console.log(user);
+		if(this.state.email==="" ){
+			ToastsStore.warning("Enter the EmailID  to get an OTP 😶");
+		}
+		else if(this.state.name===""){
+			ToastsStore.warning("Enter the Name  to get an OTP 😶");
+		}
+		else if(/^[a-zA-Z0-9.]+@iiitb.org+$/.test(this.state.email)===false){
+			ToastsStore.error("Enter the Valid IIITB Id 😟");
+		}
+		else{	
+		this.setState({showMessage: true});	
+		axios.post('http://localhost:5000/sendOTP/', user)
+		.then(response => {
+			ToastsStore.success("OTP Send.. Click verify OTP to proceed 🤩");
+			this.state.otpSend=true
+		})
+		.catch(error => console.log(error));
+	}
+	}
+
+	verifyEmail =()=>{
+			
+		const user = {
+		    otp: this.state.otp
+		}	
+	    if(!this.state.otpSend){
+			ToastsStore.warning("Send OTP First ! 😕 ")
+		}
+		else if(this.state.mail===""){
+			ToastsStore.warning("OTP Can't be generated without providing Email ID😕 ")
+
+		}
+		else if (this.state.otp===""){
+			ToastsStore.warning("First enter OTP to validate 😕 ")
+			
+		}
+		else if(this.state.otp.match(/^[0-9]/) === null){
+			ToastsStore.info("OTP can be only Numeric! 🤕")
+			
+		}
+		else if(this.state.otp.length != 4){
+			ToastsStore.warning("OTP length should be only 4 😕 ")
+			
+		}
+		else{
+		axios.post('http://localhost:5000/verifyOTP/', user)
+		.then(response => {
+				ToastsStore.success("OTP Verified 🥳, Please Enter Password");
+				this.state.isEmailVerified=true
+				this.state.showMessage=false
+		})
+		.catch(error => {
+			ToastsStore.error("WRONG OTP 😟. Please try Again!");
+		
+		});
+	}
+	}
+	
+
 	onSubmit = (e) => {
 		e.preventDefault();
-
+		if (this.state.password !== this.state.confirmPassword) {
+			ToastsStore.warning("Password Don't Match 😕 ")
+		} 
+		//else if(!this.state.isEmailVerified){
+		//	ToastsStore.warning("Email ID Not verified 😕 ")
+		//}
+		else {
+		
 		const { name, email, password } = this.state;
-
 		// Create user object
 		const newUser = {
 			name, email, password
 		};
-
 		// Attempt to register
 		this.props.register(newUser);
 	}
+}
 	render() {
 		return (
 			<div>
+				<ToastsContainer position={ToastsContainerPosition.TOP_RIGHT} closeOnClick={true} store={ToastsStore}/>
 				<NavLink onClick={this.toggle} href="#">Register</NavLink>
 
 				<Modal
@@ -109,6 +188,15 @@ class RegisterModal extends Component {
 									className="mb-3"
 									onChange={this.onChange}
 								/>
+								<Label for="otp">OTP</Label>
+								<Input
+									
+									name="otp" //should match the state name above
+									id="otp"
+									placeholder="Enter OTP "
+									className="mb-3"
+									onChange={this.onChange}
+								/>
 								<Label for="password">Password</Label>
 								<Input
 									type="password"
@@ -118,13 +206,36 @@ class RegisterModal extends Component {
 									className="mb-3"
 									onChange={this.onChange}
 								/>
-								<Button
-									color="dark"
-									style={{ marginTop: '2rem' }}
-									block
-								>Register</Button>
+								<Label for="confirmPassword">confirmPassword</Label>
+								<Input
+									type="password"
+									name="confirmPassword" //should match the state name above
+									id="confirmPassword"
+									placeholder="confirmPassword"
+									className="mb-3"
+									onChange={this.onChange}
+								/>
+								  <div class="col-md-12 text-center">
+								<button class="btn btn-outline-primary" type="submit" >Register </button>
+								</div>
+								<br></br>
+								<div class="second">
+                         <div class="col-md-12 text-center">
+                      <form>
+             
+				&nbsp; &nbsp;&nbsp;
+                <button class="btn btn-outline-primary" onClick={this.confirmEmail} >Send OTP </button>
+				&nbsp;&nbsp;&nbsp;
+				<button class="btn btn-outline-primary" onClick={this.verifyEmail}  >Verify OTP </button>
+            </form>
+      </div>
+</div>
+{this.state.showMessage && <p> Resend the OTP in </p>}
+{this.state.showMessage && <Countdown date={Date.now() + 30000} />}
+
 							</FormGroup>
 						</Form>
+						
 					</ModalBody>
 				</Modal>
 			</div>
