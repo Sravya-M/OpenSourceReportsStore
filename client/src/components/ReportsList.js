@@ -20,7 +20,8 @@ class ReportsList extends Component {
 	static propTypes = {
 		getReports: PropTypes.func.isRequired,
 		report: PropTypes.object.isRequired,
-		isAuthenticated: PropTypes.bool
+		isAuthenticated: PropTypes.bool,
+		isAdmin: PropTypes.bool
 	};
 
 	componentDidMount() {
@@ -58,6 +59,7 @@ class ReportsList extends Component {
 									<Table>
 										<thead>
 											<tr>
+												{this.props.isAdmin ? <th></th> : ''}
 												<th>Student Name</th>
 												<th>Professor Name</th>
 												<th>Category</th>
@@ -70,18 +72,23 @@ class ReportsList extends Component {
 											{reports.length == 0 ? <th> No data to display </th> :
 												reports.map(({ _id, studentName, semester, category, professorName, year, path }) => (
 													<tr key={_id}>
+														{this.props.isAdmin ?
+															<th>
+																<Button
+																	title="Delete Report"
+																	className="remove-btn"
+																	color="danger"
+																	size="sm"
+																	onClick={this.onDeleteClick.bind(this, _id)}
+																>&times;</Button>
+															</th> : ''}
 														<th>{studentName}</th>
 														<th>{professorName}</th>
 														<th>{category}</th>
 														<th>{semester}</th>
 														<th>{year}</th>
-														<th><a href={files[`${path}`]} target="_blank">View File</a></th>
-														<th><a href={files[`${path}`]} download>Download</a></th>
-														{/* <th>
-														<div>
-															<embed src={path} width="200px" height="200px" />
-														</div>
-													</th> */}
+														<th><a href={files[`${path}`]} target="_blank">View File</a>&nbsp;&nbsp;&nbsp;&nbsp;
+															<a href={files[`${path}`]} download title="Download">&darr;</a></th>
 													</tr>
 												))
 											}
@@ -100,6 +107,7 @@ class ReportsList extends Component {
 
 const mapStateToProps = (state) => ({
 	report: state.report,
-	isAuthenticated: state.auth.isAuthenticated
+	isAuthenticated: state.auth.isAuthenticated,
+	isAdmin: state.auth.isAdmin
 });
 export default connect(mapStateToProps, { getReports, deleteReport })(ReportsList);
