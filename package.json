@@ -39,6 +39,6 @@
     "react-toasts": "^3.0.6"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.6"
   }
 }

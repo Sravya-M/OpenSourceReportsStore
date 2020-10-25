@@ -78,7 +78,7 @@ class LoginModal extends Component {
 //		debugger;
 		//Attempt to login
 		this.props.login(user).then(res => {
-			debugger;
+			//debugger;
 			//this.setState({ role: res.payload.user.role });
 		});
 	}

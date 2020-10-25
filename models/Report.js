@@ -7,10 +7,12 @@ const ReportSchema = new Schema({
 	studentName: {
 		type: String
 	},
-	semester: {
-		type: Number,
-		default: 1
-	},
+	tag: [
+	{
+		type:String
+	}
+	],
+
 	category: {
 		type: String
 	},

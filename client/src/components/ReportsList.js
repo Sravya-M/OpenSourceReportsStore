@@ -17,6 +17,22 @@ class ReportsList extends Component {
 	// 	]
 	// } // Moved to reducer
 
+  constructor(){
+    super();
+
+    this.state={
+      search:null
+    };
+  }
+
+  searchSpace=(event)=>{
+  	//alert ("welcome")
+  //	event.preventDefault()
+    let keyword = event.target.innerText;
+    this.setState({search:keyword})
+    console.log (keyword)
+  }
+
 	static propTypes = {
 		getReports: PropTypes.func.isRequired,
 		report: PropTypes.object.isRequired,
@@ -26,6 +42,7 @@ class ReportsList extends Component {
 
 	componentDidMount() {
 		this.props.getReports();
+		//console.log (this.props.tag)
 	}
 	onDeleteClick = (id) => {
 		this.props.deleteReport(id);
@@ -38,9 +55,12 @@ class ReportsList extends Component {
 		});
 		return images;
 	};
-
+	
 	render() {
 		const { reports } = this.props.report;
+		//const {category, createdAt, path, professorName, studentName, tag, updatedAt, year, __v, _id} = this.props.report
+	//	var tags = reports["tag"]
+	//	console.log(reports["tag"])
 		const webpackContext = require.context(
 			"../../../uploads",
 			false,
@@ -63,14 +83,21 @@ class ReportsList extends Component {
 												<th>Student Name</th>
 												<th>Professor Name</th>
 												<th>Category</th>
-												<th>Semester</th>
-												<th>Year</th>
+												<th></th>
 												<th>Report</th>
 											</tr>
 										</thead>
 										<tbody>
 											{reports.length == 0 ? <th> No data to display </th> :
-												reports.map(({ _id, studentName, semester, category, professorName, year, path }) => (
+												 reports.filter((data)=>{
+												 	console.log (data)
+												      if(this.state.search == null)
+												          return data
+												      else if(data.tag[0].toLowerCase().includes(this.state.search.toLowerCase())){
+												          return data
+												      }
+												    }).map(({ _id, studentName, tag, category, professorName, year, path }) => (
+													
 													<tr key={_id}>
 														{this.props.isAdmin ?
 															<th>
@@ -85,8 +112,12 @@ class ReportsList extends Component {
 														<th>{studentName}</th>
 														<th>{professorName}</th>
 														<th>{category}</th>
-														<th>{semester}</th>
-														<th>{year}</th>
+
+														<th>
+																
+														{tag[0].split(",").map((val) => <Button onClick={this.searchSpace.bind(this)} outline color="secondary"> {val}</Button>)}
+														
+														</th>
 														<th><a href={files[`${path}`]} target="_blank">View File</a>&nbsp;&nbsp;&nbsp;&nbsp;
 															<a href={files[`${path}`]} download title="Download">&darr;</a></th>
 													</tr>

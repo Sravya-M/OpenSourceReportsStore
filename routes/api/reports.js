@@ -8,6 +8,7 @@ const uploadReports = require('./uploadReports');
 // @access 	Public
 
 router.get('/', (req, res) => {
+	console.log ("reached")
 	Report.find()
 		.then(reports => res.json(reports));
 });
@@ -24,7 +25,7 @@ router.post('/', auth, (req, res) => {
 			console.log("Error ---- " + err);
 		} else {
 			console.log(req.body);
-			console.log(req.file);
+			console.log(req.body.tag);
 			if (!req.file) {
 				return res.status(404).send({ msg: "Report not found" });
 			}
@@ -32,7 +33,7 @@ router.post('/', auth, (req, res) => {
 			var report = {
 				path: fullPath,
 				studentName: req.body.studentName,
-				semester: req.body.semester,
+				tag: req.body.tag,
 				category: req.body.category,
 				professorName: req.body.professorName,
 				year: req.body.year
@@ -54,6 +55,7 @@ router.post('/', auth, (req, res) => {
 // @access 	Private
 
 router.delete('/:id', auth, (req, res) => {
+
 	Report.findById(req.params.id)
 		.then(report => report.remove().then(() => res.json({ sucess: true })))
 		.catch(err => res.status(404).json({ sucess: false }));
