@@ -22,11 +22,30 @@ class ReportModal extends Component {
 			studentName: '',
 			professorName: '',
 			category: '',
-			semester: '',
+			//tags: [],
 			year: '',
-			selectedFile: null
+			selectedFile: null,
+			tag: []
+		      
 		};
 	}
+	 removeTag = (i) => {
+ 	   const newTags = [ ...this.state.tag ];
+    	newTags.splice(i, 1);
+    	this.setState({ tag: newTags });
+  	}
+  	inputKeyDown = (e) => {
+    const val = e.target.value;
+    if (e.key === 'Tab' && val) {
+      /*if (this.state.tag.find(tag => tag.toLowerCase() === val.toLowerCase())) {
+        return;
+      }*/
+      this.setState({ tag: [...this.state.tag, val]});
+      this.tagInput.value = null;
+    } else if (e.key === 'Backspace' && !val) {
+      this.removeTag(this.state.tag.length - 1);
+    }
+  }
 
 	static propTypes = {
 		isAuthenticated: PropTypes.bool,
@@ -51,7 +70,7 @@ class ReportModal extends Component {
 			studentName: this.state.studentName,
 			professorName: this.state.professorName,
 			category: this.state.category,
-			semester: this.state.semester,
+			tag: this.state.tag,
 			year: this.state.year,
 			selectedFile: e.target.files[0]
 		});
@@ -60,12 +79,15 @@ class ReportModal extends Component {
 		e.preventDefault();
 		const data = new FormData(e.target);
 		data.append("file", this.state.selectedFile);
+		data.append("tag", this.state.tag)
 		this.props.addReport(data);
-
+		console.log(this.state.tag)
+		this.state.tag = []
 		//Close modal
 		this.toggle();
 	}
 	render() {
+		const { tag } = this.state;
 		return (
 			<div>
 				{this.props.isAuthenticated && this.props.isAdmin ?
@@ -124,18 +146,7 @@ class ReportModal extends Component {
 										<option value="Other">Other</option>
 									</select>
 								</div>
-								<div class="col">
-									<label htmlFor="semester">Semester:</label>
-									<input
-										type="number"
-										min="1"
-										max="10"
-										class="form-control"
-										name="semester"
-										onChange={this.onChange}
-										placeholder="Semester"
-									/>
-								</div>
+								
 								<div class="col">
 									<label htmlFor="year">Year:</label>
 									<input
@@ -157,6 +168,22 @@ class ReportModal extends Component {
 									onChange={this.handleSelectedFile}
 								/>
 							</div>
+							<div class="col">
+
+									<label htmlFor="tags">Tags:</label>
+									 <div className="input-tag">
+								        <ul className="input-tag__tags">
+								          { tag.map((tag, i) => (
+								            <li key={tag}>
+								              {tag}
+								              <button type="button" onClick={() => { this.removeTag(i); }}>+</button>
+								            </li>
+								          ))}
+								          <li className="input-tag__tags__input"><input type="text" onKeyDown={this.inputKeyDown} ref={c => { this.tagInput = c; }} /></li>
+
+								        </ul>
+								      </div>
+								</div>
 							<button type="submit" class="btn btn-primary">
 								Upload
 							</button>

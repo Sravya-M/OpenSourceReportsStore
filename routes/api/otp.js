@@ -11,11 +11,8 @@ var transporter = nodemailer.createTransport({
 	}
 });
 
-// Access the parse results as request.body
+//Access the parse results as request.body
 function generateOTP() {
-
-	// Declare a digits variable  
-	// which stores all digits 
 	var digits = '0123456789';
 	let OTP = '';
 	for (let i = 0; i < 4; i++) {

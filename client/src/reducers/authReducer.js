@@ -25,7 +25,7 @@ export default function (state = initialState, action) {
 				isLoading: true
 			};
 		case USER_LOADED:
-			debugger;
+			//debugger;
 			return {
 				...state,
 				isAuthenticated: true,
