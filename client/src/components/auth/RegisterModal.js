@@ -19,6 +19,8 @@ import { register } from '../../actions/authActions';
 import { clearErrors } from '../../actions/errorActions';
 import { ToastsContainer, ToastsStore, ToastsContainerPosition } from 'react-toasts';
 import Countdown from 'react-countdown';
+import 'react-toastify/dist/ReactToastify.css';
+import {toast} from 'react-toastify'; 
 
 class RegisterModal extends Component {
 	state = {
@@ -31,7 +33,9 @@ class RegisterModal extends Component {
 		showMessage: false,
 		confirmPassword: '',
 		isEmailVerified: false,
-		otpSend: false
+		otpSend: false,
+		isButtonDisabled: false,
+		isButtonDisabledVerify: false
 	};
 
 	static propTypes = {
@@ -40,6 +44,11 @@ class RegisterModal extends Component {
 		register: PropTypes.func.isRequired,
 		clearErrors: PropTypes.func.isRequired
 	};
+
+	constructor (props) {
+		super(props);
+		this.state.isButtonDisabled= false
+	}
 
 	componentDidUpdate(prevProps) {
 		const { error, isAuthenticated } = this.props;
@@ -72,26 +81,36 @@ class RegisterModal extends Component {
 			[e.target.name]: e.target.value
 		});
 	}
-
-	confirmEmail = () => {
+     
+	confirmEmail = (event) => {
+		event.preventDefault();
 		const user = {
 			email: this.state.email,
 		}
-		console.log(user);
+		toast.configure() 
 		if (this.state.email === "") {
-			ToastsStore.warning("Enter the EmailID  to get an OTP 😶");
+			toast.warning("Enter the EmailID  to get an OTP 😶"); 
 		}
 		else if (this.state.name === "") {
-			ToastsStore.warning("Enter the Name  to get an OTP 😶");
+			toast.warning("Enter the Name  to get an OTP 😶");
 		}
-		else if (/^[a-zA-Z0-9.]+@iiitb.org+$/.test(this.state.email) === false) {
-			ToastsStore.error("Enter the Valid IIITB Id 😟");
+		else if (/^[a-zA-Z0-9.]+@iiitb.org+$/.test(this.state.email) === false && 
+		/^[a-zA-Z0-9.]+@iiitb.ac.in+$/.test(this.state.email) === false) {
+			toast.error("Enter the Valid IIITB Id 😟");
+		}
+		else if(this.state.isEmailVerified){
+			toast.warning("Email ID already verified!!  😕 ")
 		}
 		else {
 			this.setState({ showMessage: true });
+			this.setState({
+				isButtonDisabled: true
+			});	
+			// **** here's the timeout ****
+		setTimeout(() => this.setState({ isButtonDisabled: false }), 100000);
 			axios.post('http://localhost:5000/api/otp/sendOTP/', user)
 				.then(response => {
-					ToastsStore.success("OTP Send.. Click verify OTP to proceed 🤩");
+					toast.success("OTP Send.. Click verify OTP to proceed 🤩");
 					this.state.otpSend = true
 				})
 				.catch(error => console.log(error));
@@ -99,38 +118,47 @@ class RegisterModal extends Component {
 	}
 
 	verifyEmail = () => {
-
+        toast.configure() 
 		const user = {
 			otp: this.state.otp
 		}
 		if (!this.state.otpSend) {
-			ToastsStore.warning("Send OTP First ! 😕 ")
+			toast.warning("Send OTP First ! 😥")
 		}
 		else if (this.state.mail === "") {
-			ToastsStore.warning("OTP Can't be generated without providing Email ID😕 ")
+			toast.warning("OTP Can't be generated without providing Email ID 😞 ")
 
 		}
 		else if (this.state.otp === "") {
-			ToastsStore.warning("First enter OTP to validate 😕 ")
+			toast.warning("First enter OTP to validate 😕 ")
 
 		}
 		else if (this.state.otp.match(/^[0-9]/) === null) {
-			ToastsStore.info("OTP can be only Numeric! 🤕")
+			toast.info("OTP can be only Numeric! 🤕")
 
 		}
 		else if (this.state.otp.length != 4) {
-			ToastsStore.warning("OTP length should be only 4 😕 ")
+			toast.warning("OTP length should be only 4 😕 ")
 
+		}
+		else if(this.state.isEmailVerified){
+			toast.warning("Email ID already verified!!  😎 ")
 		}
 		else {
 			axios.post('http://localhost:5000/api/otp/verifyOTP/', user)
 				.then(response => {
-					ToastsStore.success("OTP Verified 🥳, Please Enter Password");
+					this.setState({ showMessage: true });
+			this.setState({
+				isButtonDisabledVerify: true
+			});	
+			// **** here's the timeout ****
+		setTimeout(() => this.setState({ isButtonDisabledVerify: false }), 1000000);
+					toast.success("OTP Verified 🥳, Please Enter Password");
 					this.state.isEmailVerified = true
 					this.state.showMessage = false
 				})
 				.catch(error => {
-					ToastsStore.error("WRONG OTP 😟. Please try Again!");
+					toast.error("WRONG OTP 😟. Please try Again!");
 
 				});
 		}
@@ -138,13 +166,17 @@ class RegisterModal extends Component {
 
 
 	onSubmit = (e) => {
-		e.preventDefault();
+	
+		toast.configure() 
 		if (this.state.password !== this.state.confirmPassword) {
-			ToastsStore.warning("Password Don't Match 😕 ")
+			toast.warning("Password Don't Match 😕 ")
 		}
-		//else if(!this.state.isEmailVerified){
-		//	ToastsStore.warning("Email ID Not verified 😕 ")
-		//}
+		else if(!this.state.isEmailVerified){
+			toast.warning("Email ID Not verified 😕 ")
+		}
+		else  if(/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[a-zA-Z!#$%&? "])[a-zA-Z0-9!#$%&?]{8,20}$/.test(this.state.password)===false){
+			toast.error("Weak Password! Minimum 8 characters,Max 20, Atleast 1 Uppercase, Lowercase,digit, special character 😟");
+		}
 		else {
 
 			const { name, email, password } = this.state;
@@ -159,9 +191,8 @@ class RegisterModal extends Component {
 	render() {
 		return (
 			<div>
-				<ToastsContainer position={ToastsContainerPosition.TOP_RIGHT} closeOnClick={true} store={ToastsStore} />
+				<ToastsContainer hideProgressBar={true} position={ToastsContainerPosition.BOTTOM_LEFT} closeOnClick={true} store={ToastsStore} />
 				<NavLink onClick={this.toggle} href="#">Register</NavLink>
-
 				<Modal
 					isOpen={this.state.modal}
 					toggle={this.toggle}>
@@ -188,25 +219,7 @@ class RegisterModal extends Component {
 									className="mb-3"
 									onChange={this.onChange}
 								/>
-								<Label for="email">OTP</Label>
-								<div class="row">
-									<div class="col">
-										<button class="btn btn-outline-primary" onClick={this.confirmEmail} >Send OTP</button>
-									</div>
-									<div class="col">
-										<Input
-											name="otp" //should match the state name above
-											id="otp"
-											type="number"
-											placeholder="Enter OTP"
-											onChange={this.onChange}
-										/>
-									</div>
-									<div class="col">
-										<button class="btn btn-outline-primary" onClick={this.verifyEmail} >Verify OTP</button>
-									</div>
-								</div>
-								<br />
+						
 								<div class="row">
 									<div class="col">
 										<Label for="password">Password</Label>
@@ -231,16 +244,33 @@ class RegisterModal extends Component {
 										/>
 									</div>
 								</div>
-								<br />
 								<div class="col-md-12 text-center">
 									<button class="btn btn-primary" type="submit" >Register </button>
 								</div>
-								<br></br>
 								{this.state.showMessage && <p> Resend the OTP in </p>}
-								{this.state.showMessage && <Countdown date={Date.now() + 30000} />}
+								{this.state.showMessage && <Countdown date={Date.now() + 60000} />}
 							</FormGroup>
 						</Form>
-
+						<h3 > Email Verification</h3>
+						<Label for="email">OTP</Label>
+								<div class="row">
+									<div class="col">
+										<button class="btn btn-outline-primary" disabled={this.state.isButtonDisabled} onClick={this.confirmEmail} >Send OTP</button>
+									</div>
+									<div class="col">
+										<Input
+											name="otp" //should match the state name above
+											id="otp"
+											type="number"
+											placeholder="Enter OTP"
+											onChange={this.onChange}
+										/>
+									</div>
+									<div class="col">
+										<button class="btn btn-outline-primary" disabled={this.state.isButtonDisabledVerify}  onClick={this.verifyEmail} >Verify OTP</button>
+									</div>
+								</div>
+								
 					</ModalBody>
 				</Modal>
 			</div>
