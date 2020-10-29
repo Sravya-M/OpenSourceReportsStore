@@ -22,9 +22,11 @@ function generateOTP() {
 }
 
 
+const config = require('config');
+const url = config.get('mongoURI');
+
 router.post('/sendOTP', (request, response) => {
 	var MongoClient = require('mongodb').MongoClient;
-	var url = "mongodb+srv://admin:admin@mernshoppinglist.e5k2p.mongodb.net/mern?retryWrites=true&w=majority";
 	var otp = generateOTP()
 	MongoClient.connect(url, (err, db) => {
 		if (err) throw err;
@@ -70,7 +72,6 @@ router.post('/sendOTP', (request, response) => {
 router.post('/verifyOTP', (request, response) => {
 	console.log(request.body.otp)
 	var MongoClient = require('mongodb').MongoClient;
-	var url = "mongodb+srv://admin:admin@mernshoppinglist.e5k2p.mongodb.net/mern?retryWrites=true&w=majority";
 	MongoClient.connect(url, function (err, db) {
 		if (err) throw err;
 		var dbo = db.db("check");

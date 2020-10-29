@@ -155,6 +155,7 @@ class RegisterModal extends Component {
 		setTimeout(() => this.setState({ isButtonDisabledVerify: false }), 1000000);
 					toast.success("OTP Verified 🥳, Please Enter Password");
 					this.state.isEmailVerified = true
+
 					this.state.showMessage = false
 				})
 				.catch(error => {
