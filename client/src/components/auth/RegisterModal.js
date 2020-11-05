@@ -35,7 +35,8 @@ class RegisterModal extends Component {
 		isEmailVerified: false,
 		otpSend: false,
 		isButtonDisabled: false,
-		isButtonDisabledVerify: false
+		isButtonDisabledVerify: false,
+		passwordDisabled: true
 	};
 
 	static propTypes = {
@@ -48,7 +49,8 @@ class RegisterModal extends Component {
 	constructor (props) {
 		super(props);
 		this.state.isButtonDisabled= false
-		this.state = { time: {}, seconds: 60 };
+		this.state.passwordDisabled=true
+		this.state = { time: {}, seconds: 59 };
 		this.timer = 0;
 		this.startTimer = this.startTimer.bind(this);
 		this.countDown = this.countDown.bind(this);
@@ -74,6 +76,7 @@ class RegisterModal extends Component {
 	  componentDidMount() {
 		let timeLeftVar = this.secondsToTime(this.state.seconds);
 		this.setState({ time: timeLeftVar });
+		this.setState({passwordDisabled:true})
 	  }
 	
 	  startTimer() {
@@ -164,7 +167,8 @@ class RegisterModal extends Component {
 		}
 	}
 
-	verifyEmail = () => {
+	verifyEmail = (e) => {
+		e.preventDefault()
         toast.configure() 
 		const user = {
 			otp: this.state.otp
@@ -202,7 +206,7 @@ class RegisterModal extends Component {
 		setTimeout(() => this.setState({ isButtonDisabledVerify: false }), 1000000);
 					toast.success("OTP Verified 🥳, Please Enter Password");
 					this.state.isEmailVerified = true
-
+                    this.state.passwordDisabled = false
 					this.state.showMessage = false
 					document.getElementById("notif").remove()
 					this.setState({
@@ -219,10 +223,13 @@ class RegisterModal extends Component {
 	
 
 
-	onSubmit = (e) => {
-	
-		toast.configure() 
-		if (this.state.password !== this.state.confirmPassword) {
+	onregister = (e) => {
+	    e.preventDefault()
+		toast.configure()
+		if(this.state.password === " "){
+			toast.error("Password can't be Empty 😕 ")
+		}
+		else if (this.state.password !== this.state.confirmPassword) {
 			toast.warning("Password Don't Match 😕 ")
 		}
 		else if(!this.state.isEmailVerified){
@@ -232,7 +239,6 @@ class RegisterModal extends Component {
 			toast.error("Weak Password! Minimum 8 characters,Max 20, Atleast 1 Uppercase, Lowercase,digit, special character 😟");
 		}
 		else {
-
 			const { name, email, password } = this.state;
 			// Create user object
 			const newUser = {
@@ -253,7 +259,7 @@ class RegisterModal extends Component {
 					<ModalHeader toggle={this.toggle}>Register</ModalHeader>
 					<ModalBody>
 						{this.state.msg ? <Alert color="danger">{this.state.msg}</Alert> : null}
-						<Form onSubmit={this.onSubmit}>
+						<Form >
 							<FormGroup>
 								<Label for="name">Name</Label>
 								<Input
@@ -273,38 +279,8 @@ class RegisterModal extends Component {
 									className="mb-3"
 									onChange={this.onChange}
 								/>
-						
-								<div class="row">
-									<div class="col">
-										<Label for="password">Password</Label>
-										<Input
-											type="password"
-											name="password" //should match the state name above
-											id="password"
-											placeholder="Password"
-											className="mb-3"
-											onChange={this.onChange}
-										/>
-									</div>
-									<div class="col">
-										<Label for="confirmPassword">Confirm Password</Label>
-										<Input
-											type="password"
-											name="confirmPassword" //should match the state name above
-											id="confirmPassword"
-											placeholder="Please re-enter Password"
-											className="mb-3"
-											onChange={this.onChange}
-										/>
-									</div>
-								</div>
-								<div class="col-md-12 text-center">
-									<button class="btn btn-primary" type="submit" >Register </button>
-								</div>
-							</FormGroup>
-						</Form>
-						<div id="notif">
-						<h3 > Email Verification</h3>
+								<div id="notif">
+						        <h3 > Email Verification</h3>
 								<div class="row">
 									<div class="col">
 										<button class="btn btn-outline-primary" disabled={this.state.isButtonDisabled} onClick={this.confirmEmail} >Send OTP</button>
@@ -325,7 +301,40 @@ class RegisterModal extends Component {
 										<button  class="btn btn-outline-primary" disabled={this.state.isButtonDisabledVerify}  onClick={this.verifyEmail} >Verify OTP</button>
 									</div>
 								</div>
-						</div>		
+						</div>
+						
+								<div class="row">
+									<div class="col">
+										<Label for="password">Password</Label>
+										<Input
+											type="password"
+											name="password" //should match the state name above
+											id="password"
+											placeholder="Password"
+											className="mb-3"
+											onChange={this.onChange}
+											disabled={this.state.passwordDisabled}
+										/>
+									</div>
+									<div class="col">
+										<Label for="confirmPassword">Confirm Password</Label>
+										<Input
+											type="password"
+											name="confirmPassword" //should match the state name above
+											id="confirmPassword"
+											placeholder="Re-Enter Password"
+											className="mb-3"
+											onChange={this.onChange}
+											disabled={this.state.passwordDisabled}
+										/>
+									</div>
+								</div>
+								<div class="col-md-12 text-center">
+									<button class="btn btn-primary" onClick={this.onregister} >Register </button>
+								</div>
+							</FormGroup>
+						</Form>
+								
 					</ModalBody>
 				</Modal>
 			</div>
