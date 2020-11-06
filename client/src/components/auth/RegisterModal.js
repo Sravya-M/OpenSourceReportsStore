@@ -18,9 +18,9 @@ import PropTypes from 'prop-types';
 import { register } from '../../actions/authActions';
 import { clearErrors } from '../../actions/errorActions';
 import { ToastsContainer, ToastsStore, ToastsContainerPosition } from 'react-toasts';
-import Countdown from 'react-countdown';
 import 'react-toastify/dist/ReactToastify.css';
 import {toast} from 'react-toastify'; 
+import { Hourglass } from 'react-spinners-css';
 
 class RegisterModal extends Component {
 	state = {
@@ -37,7 +37,8 @@ class RegisterModal extends Component {
 		isButtonDisabled: false,
 		isButtonDisabledVerify: false,
 		passwordDisabled: true,
-		emailDisabled: false
+		emailDisabled: false,
+		refresh:false
 	};
 
 	static propTypes = {
@@ -224,7 +225,16 @@ class RegisterModal extends Component {
 		}
 	}
 	refresh=()=>{
-		window.location.reload()
+		this.setState({
+			refresh : true
+		})
+
+		document.getElementById("reload").innerHTML="<p><font color='2FA9C6'>Reloading, Hold On </fond></p>"
+		document.getElementById("notif").remove()
+		setTimeout(function(){
+			//do what you need here
+			window.location.reload()
+		}, 3000);
 	}
 
 	renderElement(){
@@ -232,8 +242,11 @@ class RegisterModal extends Component {
 		   return <p><font color="red" onClick={this.refresh}>Wanna Change Email ID?</font></p>;
 		return null;
 	 }
-	
-
+	 refreshRender(){
+		 if(this.state.refresh==true)
+		 return <Hourglass color="#2FA9C6"/>;
+		 return null;
+	 }
 
 	onregister = (e) => {
 	    e.preventDefault()
@@ -262,7 +275,7 @@ class RegisterModal extends Component {
 	}
 	render() {
 		return (
-			<div>
+			<div id="refr">
 				<ToastsContainer hideProgressBar={true} position={ToastsContainerPosition.BOTTOM_LEFT} closeOnClick={true} store={ToastsStore} />
 				<NavLink onClick={this.toggle} href="#">Register</NavLink>
 				<Modal
@@ -282,6 +295,7 @@ class RegisterModal extends Component {
 									className="mb-3"
 									onChange={this.onChange}
 								/>
+								
 								<Label for="email">Email</Label>
 								<Input
 									type="email"
@@ -292,10 +306,13 @@ class RegisterModal extends Component {
 									onChange={this.onChange}
 									disabled={this.state.emailDisabled}
 								/>
+								<div id="reload"></div>
+								<div>
+									{ this.refreshRender() }
+								</div>
 								 <div>
                                   { this.renderElement() }
 								  </div>
-	                           
 								<div id="notif">
 						        <h3 > Email Verification</h3>
 								<div class="row">
@@ -353,6 +370,7 @@ class RegisterModal extends Component {
 						</Form>
 					</ModalBody>
 				</Modal>
+				
 			</div>
 		);
 	}
