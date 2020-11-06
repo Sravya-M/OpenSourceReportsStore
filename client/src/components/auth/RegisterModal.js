@@ -36,7 +36,8 @@ class RegisterModal extends Component {
 		otpSend: false,
 		isButtonDisabled: false,
 		isButtonDisabledVerify: false,
-		passwordDisabled: true
+		passwordDisabled: true,
+		emailDisabled: false
 	};
 
 	static propTypes = {
@@ -50,6 +51,7 @@ class RegisterModal extends Component {
 		super(props);
 		this.state.isButtonDisabled= false
 		this.state.passwordDisabled=true
+		this.state.emailDisabled=false
 		this.state = { time: {}, seconds: 59 };
 		this.timer = 0;
 		this.startTimer = this.startTimer.bind(this);
@@ -161,6 +163,7 @@ class RegisterModal extends Component {
 				.then(response => {
 					this.startTimer()
 					toast.success("OTP Send.. Click verify OTP to proceed 🤩");
+					this.state.emailDisabled=true
 					this.state.otpSend = true
 				})
 				.catch(error => console.log(error));
@@ -220,6 +223,15 @@ class RegisterModal extends Component {
 				});
 		}
 	}
+	refresh=()=>{
+		window.location.reload()
+	}
+
+	renderElement(){
+		if(this.state.otpSend == true)
+		   return <p><font color="red" onClick={this.refresh}>Wanna Change Email ID?</font></p>;
+		return null;
+	 }
 	
 
 
@@ -278,7 +290,12 @@ class RegisterModal extends Component {
 									placeholder="Email"
 									className="mb-3"
 									onChange={this.onChange}
+									disabled={this.state.emailDisabled}
 								/>
+								 <div>
+                                  { this.renderElement() }
+								  </div>
+	                           
 								<div id="notif">
 						        <h3 > Email Verification</h3>
 								<div class="row">
@@ -334,7 +351,6 @@ class RegisterModal extends Component {
 								</div>
 							</FormGroup>
 						</Form>
-								
 					</ModalBody>
 				</Modal>
 			</div>
