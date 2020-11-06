@@ -158,7 +158,7 @@ class RegisterModal extends Component {
 				isButtonDisabled: true
 			});	
 			// **** here's the timeout ****
-		setTimeout(() => this.setState({ isButtonDisabled: false }), 100000);
+		setTimeout(() => this.setState({ isButtonDisabled: false }), 60000);
 			axios.post('http://localhost:5000/api/otp/sendOTP/', user)
 				.then(response => {
 					this.startTimer()
@@ -206,7 +206,7 @@ class RegisterModal extends Component {
 				isButtonDisabledVerify: true
 			});	
 			// **** here's the timeout ****
-		setTimeout(() => this.setState({ isButtonDisabledVerify: false }), 1000000);
+		setTimeout(() => this.setState({ isButtonDisabledVerify: false }), 60000);
 					toast.success("OTP Verified 🥳, Please Enter Password");
 					this.state.isEmailVerified = true
                     this.state.passwordDisabled = false
