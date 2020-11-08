@@ -26,7 +26,7 @@ class ReportModal extends Component {
 			year: '',
 			selectedFile: null,
 			tag: []
-
+		      
 		};
 	}
 	 removeTag = (i) => {
@@ -80,7 +80,6 @@ class ReportModal extends Component {
 		const data = new FormData(e.target);
 		data.append("file", this.state.selectedFile);
 		data.append("tag", this.state.tag)
-
 		this.props.addReport(data);
 		console.log(this.state.tag)
 		this.state.tag = []
@@ -100,7 +99,7 @@ class ReportModal extends Component {
 					:
 					''
 				}
-				
+
 				<Modal
 					isOpen={this.state.modal}
 					toggle={this.toggle}>
@@ -132,14 +131,14 @@ class ReportModal extends Component {
 							<div class="row">
 								<div class="col">
 									<label for="category">Choose category:</label>
-									<select id="category" name="category">
+									<select id="category" name="category" class="form-control">
 										<option value="MTech Thesis">MTech Thesis</option>
 										<option value="iMTech Thesis">iMTech Thesis</option>
 										<option value="PhD Thesis">PhD Thesis</option>
 										<option value="Other">Other</option>
 									</select>
 								</div>
-
+								
 								<div class="col">
 									<label htmlFor="year">Year:</label>
 									<input
@@ -152,7 +151,7 @@ class ReportModal extends Component {
 										placeholder="Year"
 									/>
 								</div>
-							</div>
+							</div><br/>
 							<div className="form-group">
 								<input
 									type="file"
@@ -176,10 +175,10 @@ class ReportModal extends Component {
 
 								        </ul>
 								      </div>
+								</div><br/>
+								<div class="col-md-12 text-center">
+									<button class="btn btn-primary" type="submit" > Upload </button>
 								</div>
-							<button type="submit" class="btn btn-primary">
-								Upload
-							</button>
 						</form>
 					</ModalBody>
 				</Modal>
