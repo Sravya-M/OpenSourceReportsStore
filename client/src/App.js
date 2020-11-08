@@ -8,8 +8,11 @@ import { loadUser } from './actions/authActions';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
+import HomePage from './components/HomePage';
 import ReportModal from './components/ReportModal';
 import ReportsList from './components/ReportsList';
+import AppFooter from './components/AppFooter';
+
 class App extends Component {
   componentDidMount() {
     store.dispatch(loadUser());
@@ -19,10 +22,14 @@ class App extends Component {
       <Provider store={store}>
         <div className='App'>
           <AppNavbar />
+          <HomePage />
           <Container>
-            <ReportModal />
-            <ReportsList />
+            <div class="content">
+                <ReportModal />
+                <ReportsList />
+            </div>
           </Container>
+          <AppFooter />
         </div>
       </Provider>
     );

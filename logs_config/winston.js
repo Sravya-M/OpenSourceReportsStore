@@ -3,9 +3,6 @@
 // time, file size setups etc
 
 // for our project, we need user activity data
-// we can keep one file for 'info' of Registration
-// one for user activity 'info' (userid, )
-// one for errors
 
 var winston=require('winston');
 const { ElasticsearchTransport } = require('winston-elasticsearch');

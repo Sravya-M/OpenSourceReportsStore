@@ -122,13 +122,11 @@ class LoginModal extends Component {
 								/>
 
 								<div class="row">
-									<div class="col">
-										<Button
-											color="dark"
-											style={{ marginTop: '2rem' }}
-											block
-										>Login</Button>
+									<div class="col-md-12 text-center">
+										<button class="btn btn-primary" type="submit" >Login </button>
 									</div>
+									
+									
 
 									{/* AdminKey logic to be added here
 

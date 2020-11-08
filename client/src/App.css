@@ -1,3 +1,34 @@
+.header{
+  border-bottom: solid 2px #eee;
+}
+.home{
+  width: 100%;
+}
+.content{
+  margin-top: 10px;
+}
+.home-banner {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.home-banner-text {
+  position: absolute;
+  top: 40%;
+  left: 10%;
+}
+.img-responsive{
+  max-width: 80%;
+}
+.footer{
+  background-color: black;
+  color: white;
+  font-size: x-small;
+}
+.footerlogo{
+  max-width: 50%;
+}
+
 .remove-btn {
   margin-right: 0.5rem;
 }
