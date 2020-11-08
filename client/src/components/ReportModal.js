@@ -26,7 +26,7 @@ class ReportModal extends Component {
 			year: '',
 			selectedFile: null,
 			tag: []
-		      
+
 		};
 	}
 	 removeTag = (i) => {
@@ -80,6 +80,7 @@ class ReportModal extends Component {
 		const data = new FormData(e.target);
 		data.append("file", this.state.selectedFile);
 		data.append("tag", this.state.tag)
+
 		this.props.addReport(data);
 		console.log(this.state.tag)
 		this.state.tag = []
@@ -99,7 +100,7 @@ class ReportModal extends Component {
 					:
 					''
 				}
-
+				
 				<Modal
 					isOpen={this.state.modal}
 					toggle={this.toggle}>
@@ -138,7 +139,7 @@ class ReportModal extends Component {
 										<option value="Other">Other</option>
 									</select>
 								</div>
-								
+
 								<div class="col">
 									<label htmlFor="year">Year:</label>
 									<input

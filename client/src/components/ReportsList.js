@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, ListGroup, ListGroupItem, Button, Table } from 'reactstrap';
+import { Container, ListGroup, ListGroupItem, Button, Table, InputGroup, InputGroupAddon, Input } from 'reactstrap';
 import { CSSTransition, CSSTransitionGroup, TransitionGroup } from 'react-transition-group';
 //import {v1 as uuid} from 'uuid'; ////import uuid from 'uuid/dist/v1';
 import { connect } from 'react-redux';
@@ -40,7 +40,6 @@ class ReportsList extends Component {
       this.setState({search:[...this.state.search, keyword]})
       console.log (keyword)
     }
-
   }
 
 	static propTypes = {
@@ -66,6 +65,18 @@ class ReportsList extends Component {
 		return images;
 	};
 
+    handleEnter = (e) => {
+        if (e.key === 'Enter' && e.target.value) {
+          console.log (e.target.value);
+          let keyword = e.target.value;
+          if (this.state.search.indexOf(keyword) <= -1)
+          {
+            this.setState({search:[...this.state.search, keyword]})
+            console.log (keyword)
+            e.target.value = ""
+          }
+        }
+    }
 	render() {
 		const { reports } = this.props.report;
 		//const {category, createdAt, path, professorName, studentName, tag, updatedAt, year, __v, _id} = this.props.report
@@ -87,6 +98,13 @@ class ReportsList extends Component {
 						<TransitionGroup className="reports-list">
 							<CSSTransition timeout={500} classNames="fade">
 								<ListGroupItem>
+                <div className="searchForm">
+                <Input
+                type="text"
+                placeholder="Search ..."
+                onKeyDown={this.handleEnter}
+                />
+                </div>
                     <div className="input-tag">
                       <ul className="input-tag__tags">
                         { this.state.search.map((tag, i) => (
@@ -112,7 +130,7 @@ class ReportsList extends Component {
 											{reports.length == 0 ? <th> No data to display </th> :
 												 reports.filter((data)=>{
 												 	//console.log (data)
-												      if(this.state.search == null)
+												      if(this.state.search == [])
 												          return data
 												      else
                               {
