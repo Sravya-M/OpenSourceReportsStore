@@ -97,15 +97,7 @@ class ReportModal extends Component {
 						onClick={this.toggle}
 					>Add Report</Button>
 					:
-					this.props.isAuthenticated ?
-						''
-						:
-						<div>
-							<h1 className="mb-3 ml-4">Open Source Reports Management</h1>
-							<br />
-							<h4 className="mb-3 ml-4">Please login to manage reports</h4>
-							<br />
-						</div>
+					''
 				}
 
 				<Modal
