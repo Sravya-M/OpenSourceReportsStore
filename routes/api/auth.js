@@ -7,6 +7,7 @@ const auth = require('../../middleware/auth');
 
 // Bring in the User model
 const User = require('../../models/User');
+const logger = require('../../logs_config/winston');
 
 // @route 	POST api/auth
 // @desc 	Auth user
@@ -34,6 +35,8 @@ router.post('/', (req, res) => {
 						{ expiresIn: 3600 },
 						(err, token) => {
 							if (err) throw err;
+							const activityId = token.split('.')[2];
+							logger.info('User Logged in',{'userId':user.id,'activityId':activityId,'context':'auth.js'});
 							return res.json({
 								token,
 								user: {

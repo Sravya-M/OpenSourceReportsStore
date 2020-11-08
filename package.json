@@ -19,8 +19,6 @@
   "author": "Swati N Murthy",
   "license": "ISC",
   "dependencies": {
-    "@bit/joshk.jotils.get-random-color": "^2.1.1",
-    "@bit/joshk.react-spinners-css.facebook": "^1.2.1",
     "bcryptjs": "^2.4.3",
     "concurrently": "^5.3.0",
     "config": "^3.3.1",
@@ -42,7 +40,9 @@
     "react-spinners-css": "^1.2.2",
     "react-toast-notifications": "^2.4.0",
     "react-toastify": "^6.0.9",
-    "react-toasts": "^3.0.6"
+    "react-toasts": "^3.0.6",
+    "winston": "^3.3.3",
+    "winston-elasticsearch": "^0.12.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
