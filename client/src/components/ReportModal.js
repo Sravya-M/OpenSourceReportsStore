@@ -91,11 +91,10 @@ class ReportModal extends Component {
 		return (
 			<div>
 				{this.props.isAuthenticated && this.props.isAdmin ?
-					<Button
-						color="dark"
-						style={{ marginBottom: '2rem' }}
+					<Button size="sm"
+						color="dark" title="Add Report"
 						onClick={this.toggle}
-					>Add Report</Button>
+					>Add <b>+</b></Button>
 					:
 					''
 				}
@@ -113,7 +112,7 @@ class ReportModal extends Component {
 										type="text"
 										class="form-control"
 										name="studentName"
-										onChange={this.onChange}
+										onChange={this.onChange} 
 										placeholder="Student Name"
 									/>
 								</div>
@@ -162,7 +161,7 @@ class ReportModal extends Component {
 							</div>
 							<div class="col">
 
-									<label htmlFor="tags">Tags:</label>
+									<label htmlFor="tags">Tags: (press TAB after each tag)</label>
 									 <div className="input-tag">
 								        <ul className="input-tag__tags">
 								          { tag.map((tag, i) => (
@@ -171,7 +170,7 @@ class ReportModal extends Component {
 								              <button type="button" onClick={() => { this.removeTag(i); }}>+</button>
 								            </li>
 								          ))}
-								          <li className="input-tag__tags__input"><input type="text" onKeyDown={this.inputKeyDown} ref={c => { this.tagInput = c; }} /></li>
+								          <li className="input-tag__tags__input"><input type="text" class="form-control" onKeyDown={this.inputKeyDown} ref={c => { this.tagInput = c; }} /></li>
 
 								        </ul>
 								      </div>
