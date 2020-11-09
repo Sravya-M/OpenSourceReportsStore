@@ -20,7 +20,7 @@ import { clearErrors } from '../../actions/errorActions';
 import { ToastsContainer, ToastsStore, ToastsContainerPosition } from 'react-toasts';
 import 'react-toastify/dist/ReactToastify.css';
 import {toast} from 'react-toastify'; 
-import { Hourglass } from 'react-spinners-css';
+import { Facebook } from 'react-spinners-css';
 import PasswordStrengthBar from 'react-password-strength-bar';
 
 class RegisterModal extends Component {
@@ -235,7 +235,7 @@ class RegisterModal extends Component {
 		setTimeout(function(){
 			//do what you need here
 			window.location.reload()
-		}, 3000);
+		}, 2000);
 	}
 
 	renderElement(){
@@ -245,7 +245,7 @@ class RegisterModal extends Component {
 	 }
 	 refreshRender(){
 		 if(this.state.refresh==true)
-		 return <Hourglass color="#2FA9C6"/>;
+		 return <Facebook color="#2FA9C6"/>;
 		 return null;
 	 }
 
