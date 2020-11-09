@@ -15,7 +15,7 @@ body{
 }
 .content{
   width: 100%;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 40px;
 }
 .home-banner {
@@ -32,7 +32,7 @@ body{
   max-width: 80%;
 }
 .wrapper{
-  margin: 10px 0px 40px;
+  margin: 10px 0px 65px;
 }
 .footer{
   border-top: 1px;
@@ -47,18 +47,23 @@ body{
 .nav-page{
   border-top: solid 2px #eee;
   display: flex;
-  justify-content: center;
   padding: 10px
 }
-.searchForm{
-  width: 60%;
+.numberofpages{
+  justify-content: left;
+  width: 60px;
+}
+.entriesPerPage{
+  font-size: small;
+  margin:10px;
+}
+.table{
   justify-content: center;
-  padding: 5px;
 }
 
-.fileicon{
-  height: 5px;
-  width: 5px;
+.searchForm{
+  padding: 10px;
+  display: flex;
 }
 
 .remove-btn {
@@ -88,7 +93,7 @@ body{
 }
 .input-tag {
   background: white;
-  
+  border: 1px solid #d6d6d6;
   border-radius: 2px;
   display: flex;
   flex-wrap: wrap;

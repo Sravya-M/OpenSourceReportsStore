@@ -65,7 +65,7 @@ class LoginModal extends Component {
 	toggleNested = (e) => {
 		e.preventDefault();
 		//debugger;
-		//this.props.clearErrors();
+		this.props.clearErrors();
 		this.setState({
 			nestedModal: !this.state.nestedModal
 		});

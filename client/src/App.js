@@ -26,7 +26,6 @@ class App extends Component {
           <div class="wrapper">
             <Container>
               <div class="content" expand="sm">
-                  <ReportModal />
                   <ReportsList />
               </div>
             </Container>

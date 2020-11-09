@@ -4,9 +4,9 @@ import { CSSTransition, CSSTransitionGroup, TransitionGroup } from 'react-transi
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Pagination from './Pagination';
-import { FileIcon, defaultStyles } from 'react-file-icon';
 
 import { getReports, deleteReport } from '../actions/ReportActions';
+import ReportModal from './ReportModal';
 class ReportsList extends Component {
 
 	constructor(){
@@ -15,10 +15,16 @@ class ReportsList extends Component {
 		this.state={
 			search:[],
 			currentPage: 1,
-			postsPerPage: 2
+			postsPerPage: 4
 		};
 	}
 
+	onChange = (e) => {
+		e.preventDefault();
+		this.setState({
+			[e.target.name]: e.target.value
+		});
+	}
 	// displaying tags STARTS
 	removeTag = (i) => {
 		const newTags = [ ...this.state.search];
@@ -61,9 +67,34 @@ class ReportsList extends Component {
 		return images;
 	};
 
+	pagination = (searchReports) =>{
+		
+		// when there is an empty result in a page, restart from 1st page
+		if(Math.ceil(searchReports.length / this.state.postsPerPage) < this.state.currentPage)
+			this.setState({currentPage:1})
+		
+		// Change page
+		const paginate = pageNumber => this.setState({currentPage:pageNumber});
+		return (
+			<div class="nav-page" expand="sm">
+					<div class="numberofpages">
+						<input type="number" size="sm" min="3" max="25" class="form-control" name="postsPerPage" 
+						value={this.state.postsPerPage} onChange={this.onChange} title="Increment/Decrement"/>
+					</div>
+					<div class="entriesPerPage">entries/page</div>
+					<Pagination 
+						postsPerPage={this.state.postsPerPage}
+						totalPosts={searchReports.length}
+						paginate={paginate}
+						currentPage={this.state.currentPage}
+					/>
+				</div>
+		);
+	}
+
 	display = searchReports =>{
 
-		console.log(searchReports);
+		//console.log(searchReports);
 		const webpackContext = require.context(
 			"../../../uploads",
 			false,
@@ -75,17 +106,10 @@ class ReportsList extends Component {
 		const indexOfFirstPost = indexOfLastPost - this.state.postsPerPage;
 		const currentPosts = searchReports.slice(indexOfFirstPost, indexOfLastPost);
 
-		// Change page
-		const paginate = pageNumber => this.setState({currentPage:pageNumber});
-
 		return(
 			<div class="report-list">
-				<Pagination 
-					postsPerPage={this.state.postsPerPage}
-					totalPosts={searchReports.length}
-					paginate={paginate}
-				/>
-				<Table>
+				{this.pagination(searchReports)}
+				<Table class="table">
 	   			<thead>
 					<tr>
 						{this.props.isAdmin ? <th></th> : ''}
@@ -116,7 +140,7 @@ class ReportsList extends Component {
 
 						<td>
 								
-						{tag[0].split(",").map((val) => <Button onClick={this.searchSpace.bind(this)} outline color="secondary" size="sm"> {val}</Button>)}
+						{tag[0].split(",").map((val) => <Button onClick={this.searchSpace.bind(this)} outline color="secondary" size="sm"> {val} </Button>)}
 						
 						</td>
 						<td><a href={files[`${path}`]} target="_blank">View</a>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -126,11 +150,7 @@ class ReportsList extends Component {
 					))
 				}
 				</Table>
-				<Pagination 
-				postsPerPage={this.state.postsPerPage}
-				totalPosts={searchReports.length}
-				paginate={paginate}
-				/>
+				{this.pagination(searchReports)}
 	   		</div>
 		);
 
@@ -156,7 +176,7 @@ class ReportsList extends Component {
 
     handleEnter = (e) => {
         if (e.key === 'Enter' && e.target.value) {
-          console.log (e.target.value);
+          //console.log (e.target.value);
           let keyword = e.target.value;
           if (this.state.search.indexOf(keyword) <= -1)
           {
@@ -182,21 +202,20 @@ class ReportsList extends Component {
 
 			<center>
 				{this.props.isAuthenticated ?
-
-
 					<ListGroup>
 						<TransitionGroup className="reports-list" width="100%">
 							<CSSTransition timeout={500} classNames="fade">
 								<ListGroupItem>
 									<div class="search-bar">
 										<div className="searchForm">
-											<Input
+											<ReportModal />
+											<div className="ml-auto"><Input
 											type="text"
 											placeholder="Search ..."
 											onKeyDown={this.handleEnter}
-											/>
+											/></div>
 										</div>
-											<div className="input-tag">
+										<div className="input-tag">
 											<ul className="input-tag__tags">
 												{ this.state.search.map((tag, i) => (
 												<li key={tag}>
@@ -205,7 +224,7 @@ class ReportsList extends Component {
 												</li>
 												))}
 											</ul>
-											</div>
+										</div>
 									
 									</div>
 									<div>
