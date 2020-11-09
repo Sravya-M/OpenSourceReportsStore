@@ -20,7 +20,8 @@ import { clearErrors } from '../../actions/errorActions';
 import { ToastsContainer, ToastsStore, ToastsContainerPosition } from 'react-toasts';
 import 'react-toastify/dist/ReactToastify.css';
 import {toast} from 'react-toastify'; 
-import { Hourglass } from 'react-spinners-css';
+import { Facebook } from 'react-spinners-css';
+import PasswordStrengthBar from 'react-password-strength-bar';
 
 class RegisterModal extends Component {
 	state = {
@@ -234,7 +235,7 @@ class RegisterModal extends Component {
 		setTimeout(function(){
 			//do what you need here
 			window.location.reload()
-		}, 3000);
+		}, 2000);
 	}
 
 	renderElement(){
@@ -244,7 +245,7 @@ class RegisterModal extends Component {
 	 }
 	 refreshRender(){
 		 if(this.state.refresh==true)
-		 return <Hourglass color="#2FA9C6"/>;
+		 return <Facebook color="#2FA9C6"/>;
 		 return null;
 	 }
 
@@ -273,9 +274,10 @@ class RegisterModal extends Component {
 			this.props.register(newUser);
 		}
 	}
+
 	render() {
 		return (
-			<div id="refr">
+			<div >
 				<ToastsContainer hideProgressBar={true} position={ToastsContainerPosition.BOTTOM_LEFT} closeOnClick={true} store={ToastsStore} />
 				<NavLink onClick={this.toggle} href="#">Register</NavLink>
 				<Modal
@@ -296,8 +298,9 @@ class RegisterModal extends Component {
 									onChange={this.onChange}
 								/>
 								
-								<Label for="email">Email</Label>
+								<Label  style={{ fontfamily : 'Arial, Helvetica, sans-serif' }} for="email">Email</Label>
 								<Input
+								    //style={{ text-shadow: '2px 2px' }}
 									type="email"
 									name="email" //should match the state name above
 									id="email"
@@ -313,6 +316,7 @@ class RegisterModal extends Component {
 								 <div>
                                   { this.renderElement() }
 								  </div>
+								 
 								<div id="notif">
 						        <h3 > Email Verification</h3>
 								<div class="row">
@@ -336,6 +340,7 @@ class RegisterModal extends Component {
 									</div>
 								</div>
 						</div>
+
 						
 								<div class="row">
 									<div class="col">
@@ -361,8 +366,12 @@ class RegisterModal extends Component {
 											onChange={this.onChange}
 											disabled={this.state.passwordDisabled}
 										/>
+										
+										
 									</div>
+									
 								</div>
+								<PasswordStrengthBar color="red" password={this.state.password} />
 								<div class="col-md-12 text-center">
 									<button class="btn btn-primary" onClick={this.onregister} >Register </button>
 								</div>
