@@ -21,10 +21,10 @@ class AppFooter extends Component {
 	render() {
 		let fullYear = new Date().getFullYear();
 		return (
-			<Navbar fixed="bottom" className="footer">
+			<Navbar fixed="bottom" className="footer" expand="sm">
 				<Container>
 					<a href="/"><img src={logo} class="footerlogo" alt=""/> </a>
-					<Nav lg={12} color="light">
+					<Nav className="ml-auto" color="light">
 						<div>{fullYear}-{fullYear+1}, Rights reserved by XXX</div>
 					</Nav>
 				</Container>

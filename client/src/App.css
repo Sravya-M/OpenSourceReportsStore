@@ -1,11 +1,22 @@
+body{
+  background-color: rgb(245, 245, 245);
+  font-size: 14px;
+}
+.App{
+  height: 100%;
+  width: 100%;
+}
 .header{
   border-bottom: solid 2px #eee;
+  background-color: white;
 }
 .home{
   width: 100%;
 }
 .content{
+  width: 100%;
   margin-top: 10px;
+  margin-bottom: 40px;
 }
 .home-banner {
   position: relative;
@@ -20,13 +31,34 @@
 .img-responsive{
   max-width: 80%;
 }
+.wrapper{
+  margin: 10px 0px 40px;
+}
 .footer{
+  border-top: 1px;
   background-color: black;
   color: white;
   font-size: x-small;
 }
 .footerlogo{
-  max-width: 50%;
+  max-width: 60%;
+}
+
+.nav-page{
+  border-top: solid 2px #eee;
+  display: flex;
+  justify-content: center;
+  padding: 10px
+}
+.searchForm{
+  width: 60%;
+  justify-content: center;
+  padding: 5px;
+}
+
+.fileicon{
+  height: 5px;
+  width: 5px;
 }
 
 .remove-btn {
@@ -50,9 +82,13 @@
   opacity: 0.01;
   transition: opacity 1000ms ease-in;
 }
+
+.search-bar{
+  background: rgb(245, 245, 245);;
+}
 .input-tag {
   background: white;
-  border: 1px solid #d6d6d6;
+  
   border-radius: 2px;
   display: flex;
   flex-wrap: wrap;

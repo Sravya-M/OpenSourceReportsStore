@@ -23,12 +23,15 @@ class App extends Component {
         <div className='App'>
           <AppNavbar />
           <HomePage />
-          <Container>
-            <div class="content">
-                <ReportModal />
-                <ReportsList />
-            </div>
-          </Container>
+          <div class="wrapper">
+            <Container>
+              <div class="content" expand="sm">
+                  <ReportModal />
+                  <ReportsList />
+              </div>
+            </Container>
+            
+          </div>
           <AppFooter />
         </div>
       </Provider>

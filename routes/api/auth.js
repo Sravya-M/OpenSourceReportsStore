@@ -14,7 +14,7 @@ const logger = require('../../logs_config/winston');
 // @access 	Public
 
 router.post('/', (req, res) => {
-	const { email, password } = req.body;
+	const { email, password , adminKey} = req.body;
 
 	//Simple Validation
 	if (!email || !password) {
@@ -24,6 +24,14 @@ router.post('/', (req, res) => {
 	User.findOne({ email })
 		.then(user => {
 			if (!user) return res.status(400).json({ msg: 'User doesnt exist' });
+
+			if(user.role == 'admin')
+				if(adminKey != "1234")
+					return res.status(400).json({ msg: 'Incorrect admin key' });
+			
+			if(user.role != 'admin')
+				if(adminKey != '')
+					return res.status(400).json({ msg: 'You are not an admin' });
 
 			//Validate password
 			bcrypt.compare(password, user.password)
