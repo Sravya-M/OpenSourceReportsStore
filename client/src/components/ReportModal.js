@@ -97,15 +97,7 @@ class ReportModal extends Component {
 						onClick={this.toggle}
 					>Add Report</Button>
 					:
-					this.props.isAuthenticated ?
-						''
-						:
-						<div>
-							<h1 className="mb-3 ml-4">Open Source Reports Management</h1>
-							<br />
-							<h4 className="mb-3 ml-4">Please login to manage reports</h4>
-							<br />
-						</div>
+					''
 				}
 
 				<Modal
@@ -139,7 +131,7 @@ class ReportModal extends Component {
 							<div class="row">
 								<div class="col">
 									<label for="category">Choose category:</label>
-									<select id="category" name="category">
+									<select id="category" name="category" class="form-control">
 										<option value="MTech Thesis">MTech Thesis</option>
 										<option value="iMTech Thesis">iMTech Thesis</option>
 										<option value="PhD Thesis">PhD Thesis</option>
@@ -159,7 +151,7 @@ class ReportModal extends Component {
 										placeholder="Year"
 									/>
 								</div>
-							</div>
+							</div><br/>
 							<div className="form-group">
 								<input
 									type="file"
@@ -183,10 +175,10 @@ class ReportModal extends Component {
 
 								        </ul>
 								      </div>
+								</div><br/>
+								<div class="col-md-12 text-center">
+									<button class="btn btn-primary" type="submit" > Upload </button>
 								</div>
-							<button type="submit" class="btn btn-primary">
-								Upload
-							</button>
 						</form>
 					</ModalBody>
 				</Modal>

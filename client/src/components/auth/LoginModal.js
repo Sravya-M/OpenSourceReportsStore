@@ -20,11 +20,12 @@ import { clearErrors } from '../../actions/errorActions';
 class LoginModal extends Component {
 	state = {
 		modal: false,
+		nestedModal:false,
 		email: '',
 		password: '',
 		role: '',
 		adminKey: '',
-		msg: null
+		msg: null,
 	};
 
 	static propTypes = {
@@ -61,6 +62,15 @@ class LoginModal extends Component {
 		});
 	}
 
+	toggleNested = (e) => {
+		e.preventDefault();
+		//debugger;
+		//this.props.clearErrors();
+		this.setState({
+			nestedModal: !this.state.nestedModal
+		});
+	  }
+
 	onChange = (e) => {
 		this.setState({
 			[e.target.name]: e.target.value
@@ -78,15 +88,8 @@ class LoginModal extends Component {
 //		debugger;
 		//Attempt to login
 		this.props.login(user).then(res => {
-			//debugger;
-			//this.setState({ role: res.payload.user.role });
+			
 		});
-	}
-
-	adminSubmit = () => {
-		debugger;
-		console.log("I am in adminSubmit");
-
 	}
 
 	render() {
@@ -120,38 +123,34 @@ class LoginModal extends Component {
 									className="mb-3"
 									onChange={this.onChange}
 								/>
-
+								
 								<div class="row">
-									<div class="col">
-										<Button
-											color="dark"
-											style={{ marginTop: '2rem' }}
-											block
-										>Login</Button>
-									</div>
-
-									{/* AdminKey logic to be added here
-
-									{(this.state.role == 'admin') ? (
-										<div class="col">
-											<Label for="adminKey">Admin Key</Label>
-											<Input
-												type="password"
-												name="adminKey" //should match the state name above
-												id="adminKey"
-												placeholder="Enter Admin key, If you are a student, Ignore this"
-												className="mb-3"
-												onChange={this.onChange}
-											/>
-											<Button
-												color="dark"
-												style={{ marginTop: '2rem' }}
-												onClick={this.adminSubmit}
-												block
-											>Admin Login</Button>
+									<div class="col-md-12 text-center">
+										<button class="btn btn-primary" type="submit" >Login </button>{' '}
+										<button class="btn btn-secondary" onClick={this.toggleNested}>Admin Login</button>
+												<Modal isOpen={this.state.nestedModal} toggle={this.toggleNested} >
+													<ModalHeader>Admin Key</ModalHeader>
+													<ModalBody>
+													{this.state.msg ? <Alert color="danger">{this.state.msg}</Alert> : null}
+													<div class="col">
+														<Input
+															type="password"
+															name="adminKey" //should match the state name above
+															id="adminKey"
+															placeholder="Enter Admin key, If you are a student, Ignore this"
+															className="mb-3"
+															onChange={this.onChange}
+														/>
+														</div>
+														<div class="col-md-12 text-center">
+															<button class="btn btn-primary" onClick={this.onSubmit} > Admin Login </button>
+														</div>
+													</ModalBody>
+												</Modal>
+													<br/>
 										</div>
-									) : ''} */}
-								</div>
+							</div>
+								
 							</FormGroup>
 						</Form>
 					</ModalBody>

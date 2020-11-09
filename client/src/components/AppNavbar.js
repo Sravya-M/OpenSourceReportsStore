@@ -14,6 +14,7 @@ import PropTypes from 'prop-types';
 import RegisterModal from './auth/RegisterModal';
 import Logout from './auth/Logout';
 import LoginModal from './auth/LoginModal';
+import logo from '../images/iiitb_navbar.png'
 
 class AppNavbar extends Component {
 	state = {
@@ -67,10 +68,11 @@ class AppNavbar extends Component {
 			</Fragment>
 		);
 		return (
-			<div>
-				<Navbar color="dark" dark expand="sm" className="mb-5">
+			<div class="header">
+				<Navbar expand="sm" className="mb-2">
 					<Container>
-						<NavbarBrand href="/">Reports List</NavbarBrand>
+						<a href="/"><img src={logo} class="img-responsive" alt=""/> </a>
+						
 						<NavbarToggler onClick={this.toggle} />
 						<Collapse isOpen={this.state.isOpen} navbar>
 							<Nav className="ml-auto" navbar>
