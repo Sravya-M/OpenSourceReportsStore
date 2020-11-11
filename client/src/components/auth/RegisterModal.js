@@ -1,6 +1,7 @@
 //To add an item
+
+//Libraries
 import React, { Component } from 'react';
-import axios from 'axios';
 import {
 	Button,
 	Modal,
@@ -15,13 +16,17 @@ import {
 } from 'reactstrap';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { register } from '../../actions/authActions';
-import { clearErrors } from '../../actions/errorActions';
-import { ToastsContainer, ToastsStore, ToastsContainerPosition } from 'react-toasts';
 import 'react-toastify/dist/ReactToastify.css';
-import {toast} from 'react-toastify'; 
+import { toast } from 'react-toastify'; 
 import { Facebook } from 'react-spinners-css';
 import PasswordStrengthBar from 'react-password-strength-bar';
+import { ToastsContainer, ToastsStore, ToastsContainerPosition } from 'react-toasts';
+
+//Local Imports
+import { register, sendOTP, verifyOTP } from '../../actions/authActions';
+import { confirmEmailAlright, verifyOTPEmailAlright, onRegisterAlright } from './utils/RegisterToasts';
+import { clearErrors } from '../../actions/errorActions';
+
 
 class RegisterModal extends Component {
 	state = {
@@ -46,6 +51,8 @@ class RegisterModal extends Component {
 		isAuthenticated: PropTypes.bool,
 		error: PropTypes.object.isRequired,
 		register: PropTypes.func.isRequired,
+		sendOTP: PropTypes.func.isRequired,
+		verifyOTP: PropTypes.func.isRequired,
 		clearErrors: PropTypes.func.isRequired
 	};
 
@@ -140,28 +147,13 @@ class RegisterModal extends Component {
 		const user = {
 			email: this.state.email,
 		}
-		toast.configure() 
-		if (this.state.email === "") {
-			toast.warning("Enter the EmailID  to get an OTP 😶"); 
-		}
-		else if (this.state.name === "") {
-			toast.warning("Enter the Name  to get an OTP 😶");
-		}
-		else if (/^[a-zA-Z0-9.]+@iiitb.org+$/.test(this.state.email) === false && 
-		/^[a-zA-Z0-9.]+@iiitb.ac.in+$/.test(this.state.email) === false) {
-			toast.error("Enter the Valid IIITB Id 😟");
-		}
-		else if(this.state.isEmailVerified){
-			toast.warning("Email ID already verified!!  😕 ")
-		}
-		else {
-			this.setState({ showMessage: true });
-			this.setState({
-				isButtonDisabled: true
-			});	
+
+		if (confirmEmailAlright(this.state.email, this.state.name, this.state.isEmailVerified)) {
+			this.setState({ showMessage: true, isButtonDisabled: true });
 			// **** here's the timeout ****
-		setTimeout(() => this.setState({ isButtonDisabled: false }), 60000);
-			axios.post('http://localhost:5000/api/otp/sendOTP/', user)
+			setTimeout(() => this.setState({ isButtonDisabled: false }), 60000);
+			
+			this.props.sendOTP(user)
 				.then(response => {
 					this.startTimer()
 					toast.success("OTP Send.. Click verify OTP to proceed 🤩");
@@ -173,42 +165,16 @@ class RegisterModal extends Component {
 	}
 
 	verifyEmail = (e) => {
-		e.preventDefault()
-        toast.configure() 
+		e.preventDefault();
 		const user = {
 			otp: this.state.otp
-		}
-		if (!this.state.otpSend) {
-			toast.warning("Send OTP First ! 😥")
-		}
-		else if (this.state.mail === "") {
-			toast.warning("OTP Can't be generated without providing Email ID 😞 ")
-
-		}
-		else if (this.state.otp === "") {
-			toast.warning("First enter OTP to validate 😕 ")
-
-		}
-		else if (this.state.otp.match(/^[0-9]/) === null) {
-			toast.info("OTP can be only Numeric! 🤕")
-
-		}
-		else if (this.state.otp.length != 4) {
-			toast.warning("OTP length should be only 4 😕 ")
-
-		}
-		else if(this.state.isEmailVerified){
-			toast.warning("Email ID already verified!!  😎 ")
-		}
-		else {
-			axios.post('http://localhost:5000/api/otp/verifyOTP/', user)
+		};
+		if (verifyOTPEmailAlright (this.state.otp, this.state.otpSend, this.state.email, this.state.isEmailVerified)) {
+			this.props.verifyOTP(user)
 				.then(response => {
-					this.setState({ showMessage: true });
-			this.setState({
-				isButtonDisabledVerify: true
-			});	
-			// **** here's the timeout ****
-		setTimeout(() => this.setState({ isButtonDisabledVerify: false }), 60000);
+					this.setState({ showMessage: true, isButtonDisabledVerify: true });
+					// **** here's the timeout ****
+					setTimeout(() => this.setState({ isButtonDisabledVerify: false }), 60000);
 					toast.success("OTP Verified 🥳, Please Enter Password");
 					this.state.isEmailVerified = true
                     this.state.passwordDisabled = false
@@ -250,21 +216,8 @@ class RegisterModal extends Component {
 	 }
 
 	onregister = (e) => {
-	    e.preventDefault()
-		toast.configure()
-		if(this.state.password === " "){
-			toast.error("Password can't be Empty 😕 ")
-		}
-		else if (this.state.password !== this.state.confirmPassword) {
-			toast.warning("Password Don't Match 😕 ")
-		}
-		else if(!this.state.isEmailVerified){
-			toast.warning("Email ID Not verified 😕 ")
-		}
-		else  if(/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[a-zA-Z!#$%&? "])[a-zA-Z0-9!#$%&?]{8,20}$/.test(this.state.password)===false){
-			toast.error("Weak Password! Minimum 8 characters,Max 20, Atleast 1 Uppercase, Lowercase,digit, special character 😟");
-		}
-		else {
+		e.preventDefault();
+		if (onRegisterAlright(this.state.password, this.state.confirmPassword, this.state.isEmailVerified)) {
 			const { name, email, password } = this.state;
 			// Create user object
 			const newUser = {
@@ -388,4 +341,4 @@ const mapStateToProps = state => ({
 	isAuthenticated: state.auth.isAuthenticated,
 	error: state.error
 });
-export default connect(mapStateToProps, { register, clearErrors })(RegisterModal);
+export default connect(mapStateToProps, { register, clearErrors, sendOTP, verifyOTP })(RegisterModal);

@@ -12,6 +12,7 @@ import {
 } from 'reactstrap';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import AddIcon from '@material-ui/icons/Add';
 import { addReport } from '../actions/ReportActions';
 import axios from 'axios';
 class ReportModal extends Component {
@@ -22,7 +23,6 @@ class ReportModal extends Component {
 			studentName: '',
 			professorName: '',
 			category: '',
-			//tags: [],
 			year: '',
 			selectedFile: null,
 			tag: []
@@ -91,10 +91,10 @@ class ReportModal extends Component {
 		return (
 			<div>
 				{this.props.isAuthenticated && this.props.isAdmin ?
-					<Button size="sm"
+					<Button
 						color="dark" title="Add Report"
 						onClick={this.toggle}
-					>Add <b>+</b></Button>
+					><b><AddIcon/></b></Button>
 					:
 					''
 				}
@@ -181,7 +181,7 @@ class ReportModal extends Component {
 						</form>
 					</ModalBody>
 				</Modal>
-			</div >
+			</div>
 		);
 	}
 }
