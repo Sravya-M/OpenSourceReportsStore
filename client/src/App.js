@@ -9,7 +9,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 import HomePage from './components/HomePage';
-import ReportModal from './components/ReportModal';
 import ReportsList from './components/ReportsList';
 import AppFooter from './components/AppFooter';
 

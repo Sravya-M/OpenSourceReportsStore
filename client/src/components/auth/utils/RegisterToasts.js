@@ -32,7 +32,7 @@ export const verifyOTPEmailAlright = (otp, otpSend, email, isEmailVerified) => {
 		toast.warning("First enter OTP to validate 😕 ");
 	} else if (otp.match(/^[0-9]/) === null) {
 		toast.info("OTP can be only Numeric! 🤕");
-	} else if (otp.length != 4) {
+	} else if (otp.length !== 4) {
 		toast.warning("OTP length should be only 4 😕 ");
 	} else if(isEmailVerified){
 		toast.warning("Email ID already verified!!  😎 ");
@@ -46,9 +46,9 @@ export const onRegisterAlright = (password, confirmPassword, isEmailVerified) =>
 	toast.configure();
 
 	let alright = false;
-	if (!password || password.length == 0 || password === " ") {
+	if (!password || password.length === 0 || password === " ") {
 		toast.error("Password can't be Empty 😕 ");
-	} else if (!confirmPassword || confirmPassword == "" || confirmPassword == " ") {
+	} else if (!confirmPassword || confirmPassword === "" || confirmPassword === " ") {
 		toast.warning("Enter confirm password, same as password");
 	} else if (password !== confirmPassword) {
 		toast.warning("Password Don't Match 😕 ");

@@ -3,7 +3,6 @@
 //Libraries
 import React, { Component } from 'react';
 import {
-	Button,
 	Modal,
 	ModalHeader,
 	ModalBody,
@@ -91,7 +90,7 @@ class RegisterModal extends Component {
 	  }
 	
 	  startTimer() {
-		if (this.timer == 0 && this.state.seconds > 0) {
+		if (this.timer === 0 && this.state.seconds > 0) {
 		  this.timer = setInterval(this.countDown, 1000);
 		}
 	  }
@@ -105,7 +104,7 @@ class RegisterModal extends Component {
 		});
 		
 		// Check if we're at zero.
-		if (seconds == 0) { 
+		if (seconds === 0) { 
 		  clearInterval(this.timer);
 		}
 	  }
@@ -157,8 +156,10 @@ class RegisterModal extends Component {
 				.then(response => {
 					this.startTimer()
 					toast.success("OTP Send.. Click verify OTP to proceed 🤩");
-					this.state.emailDisabled=true
-					this.state.otpSend = true
+					this.setState({
+						emailDisabled: true,
+						otpSend: true
+					});
 				})
 				.catch(error => console.log(error));
 		}
@@ -176,9 +177,11 @@ class RegisterModal extends Component {
 					// **** here's the timeout ****
 					setTimeout(() => this.setState({ isButtonDisabledVerify: false }), 60000);
 					toast.success("OTP Verified 🥳, Please Enter Password");
-					this.state.isEmailVerified = true
-                    this.state.passwordDisabled = false
-					this.state.showMessage = false
+					this.setState({
+						isEmailVerified: true,
+						passwordDisabled: false,
+						showMessage: false
+					});
 					document.getElementById("notif").remove()
 					this.setState({
 						time: this.secondsToTime(0),
@@ -205,12 +208,12 @@ class RegisterModal extends Component {
 	}
 
 	renderElement(){
-		if(this.state.otpSend == true)
+		if(this.state.otpSend === true)
 		   return <p><font color="red" onClick={this.refresh}>Wanna Change Email ID?</font></p>;
 		return null;
 	 }
 	 refreshRender(){
-		 if(this.state.refresh==true)
+		 if(this.state.refresh === true)
 		 return <Facebook color="#2FA9C6"/>;
 		 return null;
 	 }

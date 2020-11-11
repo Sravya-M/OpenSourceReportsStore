@@ -211,3 +211,4 @@ Require stack:
 [2020-11-11 09:08:43.188] [info] [Message: User Logged in] [ActivityID: gdVI-HptGeTcEaNe4HgmvmF_qchM-uBUDlZjmxFOqpg] [UserID: 5f8839d5ed35250e440ca1b9] [Context: auth.js] [UserType: Insider]
 [2020-11-11 09:16:35.669] [info] [Message: User Logged in] [ActivityID: AkoJG9cLNMjbu2izG4fTLMmCb5xud7lKi-V_PloF5cY] [UserID: 5f8839d5ed35250e440ca1b9] [Context: auth.js] [UserType: Insider]
 [2020-11-11 09:29:26.344] [info] [Message: User Logged in] [ActivityID: KddBa9sn4FQVfJnYRP8CKQttn8QFe9QyMBsmjNVnW_o] [UserID: 5f8839d5ed35250e440ca1b9] [Context: auth.js] [UserType: Insider]
+[2020-11-11 10:26:55.356] [info] [Message: User Logged in] [ActivityID: -o_SDBuNB2Vc6VsVL957K8l368vR-vD2qaQJdqtF9Ck] [UserID: 5f831f7a94071d09bb6cbdfa] [Context: auth.js] [UserType: Admin]

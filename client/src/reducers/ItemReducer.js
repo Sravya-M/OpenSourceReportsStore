@@ -1,6 +1,5 @@
 // Actual state is going go here
 // Check actions here (getItemAction, addItemAction)
-import {v1 as uuid} from 'uuid';
 import {GET_ITEMS, ADD_ITEM, DELETE_ITEM, ITEMS_LOADING} from '../actions/types'; 
 
 const initialState = {

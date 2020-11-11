@@ -4,17 +4,12 @@ import {
 	Button,
 	Modal,
 	ModalHeader,
-	ModalBody,
-	Form,
-	FormGroup,
-	Label,
-	Input
+	ModalBody
 } from 'reactstrap';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import AddIcon from '@material-ui/icons/Add';
 import { addReport } from '../actions/ReportActions';
-import axios from 'axios';
 class ReportModal extends Component {
 	constructor(props) {
 		super(props);
@@ -81,8 +76,9 @@ class ReportModal extends Component {
 		data.append("file", this.state.selectedFile);
 		data.append("tag", this.state.tag)
 		this.props.addReport(data);
-		console.log(this.state.tag)
-		this.state.tag = []
+		console.log(this.state.tag);
+		this.setState({tag: []});
+		
 		//Close modal
 		this.toggle();
 	}
