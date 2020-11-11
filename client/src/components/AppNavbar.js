@@ -66,8 +66,7 @@ class AppNavbar extends Component {
 			</Fragment>
 		);
 		return (
-			<div class="header">
-				<Navbar expand="sm" className="mb-2">
+				<Navbar expand="sm" className="header">
 					<Container>
 						<a href="/"><img src={logo} class="img-responsive" alt=""/> </a>
 						
@@ -79,7 +78,6 @@ class AppNavbar extends Component {
 						</Collapse>
 					</Container>
 				</Navbar>
-			</div>
 		);
 
 	}

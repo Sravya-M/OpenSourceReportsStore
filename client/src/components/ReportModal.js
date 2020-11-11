@@ -153,6 +153,7 @@ class ReportModal extends Component {
 									name=""
 									id=""
 									onChange={this.handleSelectedFile}
+									required
 								/>
 							</div>
 							<div class="col">
