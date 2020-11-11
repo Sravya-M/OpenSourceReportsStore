@@ -43,8 +43,11 @@ router.post('/', (req, res) => {
 						{ expiresIn: 3600 },
 						(err, token) => {
 							if (err) throw err;
+
 							const activityId = token.split('.')[2];
-							logger.info('User Logged in',{'userId':user.id,'activityId':activityId,'context':'auth.js'});
+							const userType = (user.role == "admin")?"Admin":((user.email).includes("@iiitb")?"Insider":"Outsider")
+							logger.info('User Logged in',{'userId':user.id,'activityId':activityId,'context':'auth.js','userType':userType});
+
 							return res.json({
 								token,
 								user: {
@@ -69,6 +72,5 @@ router.get('/user', auth, (req, res) => {
 		.select('-password')
 		.then(user => res.json(user));
 });
-
 
 module.exports = router;

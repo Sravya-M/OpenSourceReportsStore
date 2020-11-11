@@ -1,8 +1,11 @@
 // winston logger
-// we have formats (json, simple, ), log levels (CRITICAL, ERROR, WARNING, INFO, ), transports to (file, console, Elastic, etc), configurations,
-// time, file size setups etc
-
 // for our project, we need user activity data
+// logger INFORMATION `[${ISO8601 DATE}] [${LOG LEVEL}] [Message: ] [ActivityID: ] [UserID: ] [Context: ] [UserType: }]`;
+// LOG LEVEL: VERBOSE, INFO, WARNING, ERROR, CRITICAL
+// ActivityID: ID of a particular login of a User (taken from 3rd part of JWT (Part1.Part2.Part3))
+// UserID: id of the user in database
+// Context: File from which the log information is coming
+// UserType: Admin, Insider, Outsider
 
 var winston=require('winston');
 const { ElasticsearchTransport } = require('winston-elasticsearch');
@@ -17,7 +20,7 @@ const file = {
       winston.format.timestamp(),
       winston.format.printf(loginput => {
         const formattedDate = loginput.timestamp.replace('T', ' ').replace('Z', '');
-        return `[${formattedDate}] [${loginput.level}] [Message: ${loginput.message}] [ActivityID: ${loginput.activityId}] [UserID: ${loginput.userId}] [Context: ${loginput.context}]`;
+        return `[${formattedDate}] [${loginput.level}] [Message: ${loginput.message}] [ActivityID: ${loginput.activityId}] [UserID: ${loginput.userId}] [Context: ${loginput.context}] [UserType: ${loginput.userType}]`;
        })
      ),
     maxsize: 5242880, // 5MB
