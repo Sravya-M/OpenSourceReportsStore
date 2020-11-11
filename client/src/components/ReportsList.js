@@ -15,7 +15,7 @@ class ReportsList extends Component {
 		this.state={
 			search:[],
 			currentPage: 1,
-			postsPerPage: 4
+			postsPerPage: 5
 		};
 	}
 
@@ -78,8 +78,13 @@ class ReportsList extends Component {
 		return (
 			<div class="nav-page" expand="sm">
 					<div class="numberofpages">
-						<input type="number" size="sm" min="3" max="25" class="form-control" name="postsPerPage" 
-						value={this.state.postsPerPage} onChange={this.onChange} title="Increment/Decrement"/>
+						<select size="sm" class="form-control" name="postsPerPage" 
+						value={this.state.postsPerPage} onChange={this.onChange} title="rows per page">
+							<option value="5">5</option>
+							<option value="10">10</option>
+							<option value="25">25</option>
+							<option value="50">50</option>
+						</select>
 					</div>
 					<div class="entriesPerPage">entries/page</div>
 					<Pagination 
