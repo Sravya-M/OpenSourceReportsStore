@@ -11,8 +11,8 @@ class HomePage extends Component {
 						<div class="home-banner">
 							<img src={home_banner} alt="iiitb_banner" class="home"/>
 							<div class="home-banner-text">
-								<h3><b>Research Reports</b></h3>
-								<h4><b>IIITB</b></h4>
+								<h3><b>Research Project Reports</b></h3>
+								<h4><b>Ph.D | MS | M.Tech</b></h4>
 							</div>
 						</div>
 				}

@@ -7,8 +7,9 @@ body{
   width: 100%;
 }
 .header{
-  border-bottom: solid 2px #eee;
+  border-bottom: solid 2px #85A3BF;
   background-color: white;
+  padding: 3px;
 }
 .home{
   width: 100%;
@@ -39,6 +40,7 @@ body{
   background-color: black;
   color: white;
   font-size: x-small;
+  padding: 2px;
 }
 .footerlogo{
   max-width: 60%;

@@ -46,7 +46,7 @@ router.post('/', (req, res) => {
 
 							const activityId = token.split('.')[2];
 							const userType = (user.role == "admin")?"Admin":((user.email).includes("@iiitb")?"Insider":"Outsider")
-							logger.info('User Logged in',{'userId':user.id,'activityId':activityId,'context':'auth.js','userType':userType});
+							logger.info('User Logged in',{'userId':user.id,'activityId':activityId,'context':'auth.js','userType':userType,'name':user.name,'email':user.email});
 
 							return res.json({
 								token,
