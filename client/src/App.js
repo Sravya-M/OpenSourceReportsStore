@@ -13,6 +13,7 @@ import ReportModal from './components/ReportModal';
 import ReportsList from './components/ReportsList';
 import AppFooter from './components/AppFooter';
 
+
 class App extends Component {
   componentDidMount() {
     store.dispatch(loadUser());
@@ -24,6 +25,7 @@ class App extends Component {
           <AppNavbar />
           <HomePage />
           <div class="wrapper">
+            
             <Container>
               <div class="content" expand="sm">
                   <ReportsList />

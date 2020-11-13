@@ -22,6 +22,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import {toast} from 'react-toastify'; 
 import { Facebook } from 'react-spinners-css';
 import PasswordStrengthBar from 'react-password-strength-bar';
+import { useForm } from "react-hook-form";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
+const eye = <FontAwesomeIcon icon={faEye} />;
 
 class RegisterModal extends Component {
 	state = {
@@ -39,8 +43,21 @@ class RegisterModal extends Component {
 		isButtonDisabledVerify: false,
 		passwordDisabled: true,
 		emailDisabled: false,
-		refresh:false
+		refresh:false,
+		errormessage: '',
 	};
+	myChangeHandler = (event) => {
+		let nam = event.target.name;
+		let val = event.target.value;
+		let err = '';
+		if (nam === "password") {
+			if(/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[a-zA-Z!#$%&? "])[a-zA-Z0-9!#$%&?]{8,20}$/.test(val)===false){
+			err = <strong><font color="red">Weak Password! Minimum 8 characters,Max 20, Atleast 1 Uppercase, Lowercase,digit 😟</font></strong>;
+		  }
+		}
+		this.setState({errormessage: err});
+		this.setState({[nam]: val});
+	  }
 
 	static propTypes = {
 		isAuthenticated: PropTypes.bool,
@@ -48,6 +65,8 @@ class RegisterModal extends Component {
 		register: PropTypes.func.isRequired,
 		clearErrors: PropTypes.func.isRequired
 	};
+
+	
 
 	constructor (props) {
 		super(props);
@@ -58,6 +77,7 @@ class RegisterModal extends Component {
 		this.timer = 0;
 		this.startTimer = this.startTimer.bind(this);
 		this.countDown = this.countDown.bind(this);
+		
 	}
 
 	secondsToTime(secs){
@@ -351,10 +371,12 @@ class RegisterModal extends Component {
 											id="password"
 											placeholder="Password"
 											className="mb-3"
-											onChange={this.onChange}
+											onChange={this.myChangeHandler}
 											disabled={this.state.passwordDisabled}
 										/>
+										{this.state.errormessage}
 									</div>
+									<i onClick={this.togglePasswordVisiblity}>{eye}</i>
 									<div class="col">
 										<Label for="confirmPassword">Confirm Password</Label>
 										<Input
@@ -366,8 +388,6 @@ class RegisterModal extends Component {
 											onChange={this.onChange}
 											disabled={this.state.passwordDisabled}
 										/>
-										
-										
 									</div>
 									
 								</div>

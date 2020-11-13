@@ -21,6 +21,9 @@
   "dependencies": {
     "@bit/joshk.jotils.get-random-color": "^2.1.1",
     "@bit/joshk.react-spinners-css.facebook": "^1.2.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.12",
     "bcryptjs": "^2.4.3",
     "concurrently": "^5.3.0",
     "config": "^3.3.1",
@@ -39,6 +42,7 @@
     "react-countdown": "^2.3.0",
     "react-file-icon": "^1.0.0",
     "react-file-viewer": "^1.2.1",
+    "react-hook-form": "^6.11.0",
     "react-password-strength-bar": "^0.3.2",
     "react-pdf": "^5.0.0",
     "react-spinners": "^0.9.0",
@@ -47,7 +51,8 @@
     "react-toastify": "^6.0.9",
     "react-toasts": "^3.0.6",
     "winston": "^3.3.3",
-    "winston-elasticsearch": "^0.12.0"
+    "winston-elasticsearch": "^0.12.0",
+    "zxcvbn": "^4.4.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
