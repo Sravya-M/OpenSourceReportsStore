@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ListGroup, ListGroupItem, Button, Table, Input } from 'reactstrap';
+import { ListGroup, ListGroupItem, Button, Table, Input , Container} from 'reactstrap';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -196,41 +196,47 @@ class ReportsList extends Component {
 		return (
 			<center>
 				{this.props.isAuthenticated ?
-					<ListGroup>
-						<TransitionGroup className="reports-list" width="100%">
-							<CSSTransition timeout={500} classNames="fade">
-								<ListGroupItem>
-									<div class="search-bar">
-										<div className="searchForm">
-											<ReportModal />
-											<div className="ml-auto"><Input
-												type="text"
-												placeholder="Search ..."
-												onKeyDown={this.handleEnter}
-											/></div>
-										</div>
-										<div className="input-tag">
-											<ul className="input-tag__tags">
-												{this.state.search.map((tag, i) => (
-													<li key={tag}>
-														{tag}
-														<button type="button" onClick={() => { this.removeTag(i); }}>+</button>
-													</li>
-												))}
-											</ul>
-										</div>
+					<div class="wrapper">
+					<Container>
+					<div class="content" expand="sm">
+						<ListGroup>
+							<TransitionGroup className="reports-list" width="100%">
+								<CSSTransition timeout={500} classNames="fade">
+									<ListGroupItem>
+										<div class="search-bar">
+											<div className="searchForm">
+												<ReportModal />
+												<div className="ml-auto"><Input
+													type="text"
+													placeholder="Search ..."
+													onKeyDown={this.handleEnter}
+												/></div>
+											</div>
+											<div className="input-tag">
+												<ul className="input-tag__tags">
+													{this.state.search.map((tag, i) => (
+														<li key={tag}>
+															{tag}
+															<button type="button" onClick={() => { this.removeTag(i); }}>+</button>
+														</li>
+													))}
+												</ul>
+											</div>
 
-									</div>
-									<div>
-										{reports.length === 0 ? <th> No data to display </th> :
-											this.filter(reports)
-										}
-									</div>
-								</ListGroupItem>
+										</div>
+										<div>
+											{reports.length === 0 ? <th> No data to display </th> :
+												this.filter(reports)
+											}
+										</div>
+									</ListGroupItem>
 
-							</CSSTransition>
-						</TransitionGroup>
-					</ListGroup>
+								</CSSTransition>
+							</TransitionGroup>
+						</ListGroup>
+					</div>
+					</Container>
+					</div>
 					: null}
 			</center>
 		);

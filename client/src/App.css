@@ -1,24 +1,24 @@
-body{
-  background-color: rgb(245, 245, 245);
+body{  
+  background: rgb(245, 245, 245);
   font-size: 14px;
 }
+
 .App{
   height: 100%;
   width: 100%;
 }
+
+/* Navigation Bar*/
 .header{
   border-bottom: solid 2px #85A3BF;
   background-color: white;
   padding: 3px;
 }
-.home{
-  width: 100%;
+.img-responsive{
+  max-width: 80%;
 }
-.content{
-  width: 100%;
-  margin-top: 20px;
-  margin-bottom: 40px;
-}
+
+/* Home Page*/
 .home-banner {
   position: relative;
   text-align: center;
@@ -29,12 +29,38 @@ body{
   top: 40%;
   left: 10%;
 }
-.img-responsive{
-  max-width: 80%;
+.home{
+  width: 100%;
 }
+.profile-body{
+  padding: 20px;
+  margin: 20px 0px 65px;
+  background: rgb(245, 245, 245);
+  font-size: 13px;
+  border: solid 1px rgb(59, 59, 59);
+  border-radius: 0.5rem;
+}
+.profile-header{
+  font-size: 13px;
+}
+.row{
+  justify-content: center;
+  font-size: 12px;
+}
+
+/* wrapper of Report List */
 .wrapper{
-  margin: 10px 0px 65px;
+  padding-top: 10px;
+  padding-bottom:  65px;
+  background: rgb(245, 245, 245);
 }
+.content{
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+/* Footer */
 .footer{
   border-top: 1px;
   background-color: black;
@@ -46,6 +72,7 @@ body{
   max-width: 60%;
 }
 
+/* Report List - pagination */
 .nav-page{
   border-top: solid 2px #eee;
   display: flex;
@@ -59,40 +86,39 @@ body{
   font-size: small;
   margin:10px;
 }
+
+/* table */
 .table{
   justify-content: center;
 }
-
-.searchForm{
-  padding: 10px;
-  display: flex;
-}
-
 .remove-btn {
   margin-right: 0.5rem;
 }
-
 .fade-enter {
   opacity: 0.01;
 }
-
 .fade-enter-active {
   opacity: 1;
   transition: opacity 1000ms ease-in;
 }
-
 .fade-exit {
   opacity: 1;
 }
-
 .fade-exit-active {
   opacity: 0.01;
   transition: opacity 1000ms ease-in;
 }
 
+/* search area */
+.searchForm{
+  padding: 10px;
+  display: flex;
+}
 .search-bar{
   background: rgb(245, 245, 245);;
 }
+
+/* tags */
 .input-tag {
   background: white;
   border: 1px solid #d6d6d6;

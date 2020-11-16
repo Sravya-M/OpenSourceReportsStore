@@ -274,7 +274,7 @@ class RegisterModal extends Component {
 								  </div>
 								 
 								<div id="notif">
-						        <h3 > Email Verification</h3>
+						        <h6 > Email Verification</h6>
 								<div class="row">
 									<div class="col">
 										<button class="btn btn-outline-primary" disabled={this.state.isButtonDisabled} onClick={this.confirmEmail} >Send OTP</button>
