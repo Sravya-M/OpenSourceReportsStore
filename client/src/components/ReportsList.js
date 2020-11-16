@@ -143,9 +143,9 @@ class ReportsList extends Component {
 								<td>{category}</td>
 
 								<td>
-
-									{tag[0].split(",").map((val) => <Button onClick={this.searchSpace.bind(this)} outline color="secondary" size="sm"> {val} </Button>)}
-
+									<ul className="input-tag__tags">
+										{tag[0].split(",").map((val) => <button onClick={this.searchSpace.bind(this)} class="table-tags"> {val} </button>)}
+									</ul>
 								</td>
 								<td><a href={files[`${path}`]} target="_blank" rel="noopener noreferrer">View</a>&nbsp;&nbsp;&nbsp;&nbsp;
 							<a href={files[`${path}`]} download title="Download">&darr;</a></td>
