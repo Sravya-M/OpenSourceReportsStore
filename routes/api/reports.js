@@ -4,6 +4,7 @@ const auth = require('../../middleware/auth');
 const REPORT = require('./../../models/Report');
 const uploadReports = require('./uploadReports');
 const logger = require('../../logs_config/winston');
+const fs = require('fs');
 
 // @route 	GET api/reports
 // @desc 	Get All Reports
@@ -24,18 +25,18 @@ router.post('/', auth, (req, res) => {
 
 	const activityId = req.header('x-auth-token').split('.')[2];
 	const userId=req.user.id;
-	//const userType = (req.user.role == "admin")?"Admin":((req.user.email).includes("@iiitb")?"Insider":"Outsider");
+	const userType = (req.user.role == "admin")?"Admin":((req.user.email).includes("@iiitb")?"Insider":"Outsider");
 
 	uploadReports(req, res, err => {
 		console.log("I got here ___");
 		if (err) {
-			logger.error('Adding Report Failed',{'userId':userId,'activityId':activityId,'context':'report.js'});
+			logger.error('Adding Report Failed',{'userId':userId,'activityId':activityId,'context':'report.js','userType':userType,'name':req.user.name,'email':req.user.email});
 			//console.log("Error ---- " + err);
 		} else {
 			console.log(req.body);
 			console.log(req.body.tag);
 			if (!req.file) {
-				logger.error('Adding Report-Report not found',{'userId':userId,'activityId':activityId,'context':'report.js'});
+				logger.error('Adding Report-Report not found',{'userId':userId,'activityId':activityId,'context':'report.js','userType':userType,'name':req.user.name,'email':req.user.email});
 				return res.status(404).send({ msg: "Report not found" });
 			}
 			var fullPath = req.file.filename;
@@ -50,10 +51,10 @@ router.post('/', auth, (req, res) => {
 			var newReport = new REPORT(report);
 			newReport.save(function (error, newGo) {
 				if (error) {
-					logger.error('Adding Report',{'userId':userId,'activityId':activityId,'context':'report.js'});
+					logger.error('Adding Report',{'userId':userId,'activityId':activityId,'context':'report.js','userType':userType,'name':req.user.name,'email':req.user.email});
 					throw error;
 				}
-				logger.info('Added Report',{'userId':userId,'activityId':activityId,'context':'report.js'});
+				logger.info('Added Report',{'userId':userId,'activityId':activityId,'context':'report.js','userType':userType,'name':req.user.name,'email':req.user.email});
 				res.status(200).send(newGo);
 			});
 		}
@@ -69,19 +70,19 @@ router.delete('/:id', auth, (req, res) => {
 
 	const activityId = req.header('x-auth-token').split('.')[2];
 	const userId=req.user.id;
-	//const userType = (req.user.role == "admin")?"Admin":((req.user.email).includes("@iiitb")?"Insider":"Outsider");
+	const userType = (req.user.role == "admin")?"Admin":((req.user.email).includes("@iiitb")?"Insider":"Outsider");
 
 	Report.findById(req.params.id)
 		.then(report => {
 			const filename=report.path;
 			report.remove().then(() => {
-				
+			fs.unlink('uploads/'+filename,err => {if(err) throw err;});					// physical unlinking of the file on disk
 			res.json({ sucess: true })
-			logger.info('Deleted Report - '+req.params.id,{'userId':userId,'activityId':activityId,'context':'report.js'});
+			logger.info('Deleted Report - '+req.params.id,{'userId':userId,'activityId':activityId,'context':'report.js','userType':userType,'name':req.user.name,'email':req.user.email});
 		})
 	})
 		.catch(err => {
-			logger.error('Deleting Report-Report not found - '+req.params.id,{'userId':userId,'activityId':activityId,'context':'report.js'});
+			logger.error('Deleting Report-Report not found - '+req.params.id,{'userId':userId,'activityId':activityId,'context':'report.js','userType':userType,'name':req.user.name,'email':req.user.email});
 			res.status(404).json({ sucess: false })});
 });
 
