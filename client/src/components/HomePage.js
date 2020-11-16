@@ -19,7 +19,7 @@ class HomePage extends Component {
 						</div>
 							<Container>
 								<div className="profile-body">
-									<p> At IIITB, we follow the notion of research labs and centers which is an abstraction of a particular theme/area. A research lab encompasses people, projects, physical facilities, and activities. A research center or a center of excellence is an abstraction either in terms of the broader set of research themes being followed or in terms of hierarchy of research activities. Please click on the respective research domain above to get more details about its focus of research, faculty members involved, and the active labs and centers. </p>
+									<p> At IIITB, we follow the notion of research labs and centers which is an abstraction of a particular theme/area. A research lab encompasses people, projects, physical facilities, and activities. A research center or a center of excellence is an abstraction either in terms of the broader set of research themes being followed or in terms of hierarchy of research activities. </p>
 									<p> Please login to view the Research Project Reports of the work we have done. </p>
 									<div class="row">
 										<div class="col-sm-4 col-md-4 col-lg-4 col-xs-12 sm-margin-bottom-20 animated">
