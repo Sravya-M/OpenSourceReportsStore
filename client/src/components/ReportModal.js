@@ -147,7 +147,7 @@ class ReportModal extends Component {
 									/>
 								</div>
 							</div><br/>
-							<div className="form-group">
+							<div class="col">
 								<input
 									type="file"
 									name=""
@@ -155,7 +155,8 @@ class ReportModal extends Component {
 									onChange={this.handleSelectedFile}
 									required
 								/>
-							</div>
+							<label for="file" style={{color:"red"}}>* only pdf less than 2MB</label>
+							</div><br/>
 							<div class="col">
 
 									<label htmlFor="tags">Tags: (press TAB after each tag)</label>

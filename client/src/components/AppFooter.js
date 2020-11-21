@@ -6,7 +6,7 @@ import {
 } from 'reactstrap';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import logo from '../images/iiitb_footer.png'
+import logo from '../icons/iiitb_footer.png'
 
 class AppFooter extends Component {
 	state = {

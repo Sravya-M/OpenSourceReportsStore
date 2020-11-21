@@ -12,7 +12,7 @@ import PropTypes from 'prop-types';
 import RegisterModal from './auth/RegisterModal';
 import Logout from './auth/Logout';
 import LoginModal from './auth/LoginModal';
-import logo from '../images/iiitb_navbar.png'
+import logo from '../icons/iiitb_navbar.png'
 
 class AppNavbar extends Component {
 	state = {

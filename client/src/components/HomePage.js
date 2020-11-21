@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container, ListGroup, ListGroupItem } from 'reactstrap';
-import home_banner from '../images/home_banner.jpg'
+import home_banner from '../icons/home_banner.jpg'
 
 class HomePage extends Component {
 	render() {

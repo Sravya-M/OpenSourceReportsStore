@@ -431,3 +431,346 @@ Error: ENOENT: no such file or directory, unlink '1605546745872-file.pdf'] [Acti
 [2020-11-16 17:31:42.474] [info] [Added Report] [ActivityID: ZBQTDhSfy8ikOvx7fZOtanHHVbeOmLwxjCBsOPvIfMU] [UserID: 5f831f7a94071d09bb6cbdfa] [Admin] [Nathan Scott] [nathan@gmail.com] [report.js]
 [2020-11-16 17:32:24.794] [info] [Deleted Report - 5fb2b77e354f7d1cf1f3c311] [ActivityID: ZBQTDhSfy8ikOvx7fZOtanHHVbeOmLwxjCBsOPvIfMU] [UserID: 5f831f7a94071d09bb6cbdfa] [Admin] [Nathan Scott] [nathan@gmail.com] [report.js]
 [2020-11-16 17:38:40.381] [info] [Added Report] [ActivityID: ZBQTDhSfy8ikOvx7fZOtanHHVbeOmLwxjCBsOPvIfMU] [UserID: 5f831f7a94071d09bb6cbdfa] [Admin] [Nathan Scott] [nathan@gmail.com] [report.js]
+[2020-11-16 17:45:37.110] [info] [User Logged in] [ActivityID: se9mYjEz7jMkh7_O3YonDP2wn2ZGqZjkRnkf_13G2n8] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [auth.js]
+[2020-11-16 17:50:36.699] [info] [User Logged in] [ActivityID: l21bF7JQmCPsl7dpzaDnyJPdvpFuRI_okZaVuudKmas] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [auth.js]
+[2020-11-18 06:48:22.694] [error] [GET - ENOENT: no such file or directory, stat '/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/uploads/http:/localhost:5000/fileview/1603374473677-file.pdf' - /fileview/http://localhost:5000/fileview/1603374473677-file.pdf - ::ffff:127.0.0.1] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 06:49:08.783] [info] [User Logged in] [ActivityID: ODY2pfe2Vjqg7cfvH1jSjN4un37UYIzIrFx7D5Z75SY] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [auth.js]
+[2020-11-18 06:49:10.400] [error] [GET - ENOENT: no such file or directory, stat '/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/uploads/http:/localhost:3000/1603374473677-file.pdf' - /fileview/http://localhost:3000/1603374473677-file.pdf - ::ffff:127.0.0.1] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 06:50:06.565] [error] [GET - ENOENT: no such file or directory, stat '/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/uploads/http:/localhost:3000/1603374473677-file.pdf' - /fileview/http://localhost:3000/1603374473677-file.pdf - ::ffff:127.0.0.1] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 06:50:37.671] [error] [GET - Not Found - /fileview/ - ::ffff:127.0.0.1] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 06:50:58.156] [error] [GET - ENOENT: no such file or directory, stat '/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/uploads/http:,,localhost:3000,1603374473677-file.pdf' - /fileview/http:,,localhost:3000,1603374473677-file.pdf - ::ffff:127.0.0.1] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 06:52:33.897] [info] [User Logged in] [ActivityID: YCmRxZbA6SZ0H9UzZui9ZVmmN-VcIXgTR7VwUKp3RtY] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [auth.js]
+[2020-11-18 07:12:48.702] [error] [GET - ENOENT: no such file or directory, stat '/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/uploads/http:/localhost:5000/fileview/1603374473677-file.pdf' - /fileview/http://localhost:5000/fileview/1603374473677-file.pdf - ::ffff:127.0.0.1] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 07:14:01.993] [error] [GET - ENOENT: no such file or directory, stat '/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/uploads/fileview' - /fileview/fileview - ::ffff:127.0.0.1] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 07:27:31.056] [info] [User Logged in] [ActivityID: KMNunrahA2MjCOqG4r14az96DPJk2iDvn3mZDg_uBPE] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [auth.js]
+[2020-11-18 07:39:16.982] [info] [User Logged in] [ActivityID: zz25NZSWSPGdJ8l7jva7zNx8LOdMthWcwcC5YtvLwtA] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [auth.js]
+[2020-11-18 08:07:14.718] [error] [GET - ENOENT: no such file or directory, stat '/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/uploads/1603971417322-file.pdf' - /fileview/1603971417322-file.pdf - ::ffff:127.0.0.1] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 08:07:18.164] [error] [GET - ENOENT: no such file or directory, stat '/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/uploads/1603971417322-file.pdf' - /fileview/1603971417322-file.pdf - ::ffff:127.0.0.1] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 09:58:19.060] [info] [User Logged in] [ActivityID: 7LB5x1Hoqz7gI-KaJHta1o176iVuLoZkyhIhaObFhhk] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [auth.js]
+[2020-11-18 09:58:22.873] [error] [GET - activityId is not defined - /filedownload/1603374473677-file.pdf - ::ffff:127.0.0.1] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 09:58:47.223] [info] [Download Report] [ActivityID: 7LB5x1Hoqz7gI-KaJHta1o176iVuLoZkyhIhaObFhhk] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 09:59:51.931] [info] [Download Report] [ActivityID: 7LB5x1Hoqz7gI-KaJHta1o176iVuLoZkyhIhaObFhhk] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 10:17:25.913] [info] [User Logged in] [ActivityID: E-Lg5QAzISFRsc-L9NKmChTrRH8NHlmmduqiHLWTh-A] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [auth.js]
+[2020-11-18 10:17:27.504] [info] [View Report] [ActivityID: E-Lg5QAzISFRsc-L9NKmChTrRH8NHlmmduqiHLWTh-A] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 10:18:53.902] [info] [View Report] [ActivityID: E-Lg5QAzISFRsc-L9NKmChTrRH8NHlmmduqiHLWTh-A] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 10:22:18.928] [info] [View Report] [ActivityID: E-Lg5QAzISFRsc-L9NKmChTrRH8NHlmmduqiHLWTh-A] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 10:23:46.792] [info] [View Report] [ActivityID: E-Lg5QAzISFRsc-L9NKmChTrRH8NHlmmduqiHLWTh-A] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 10:24:09.258] [info] [View Report] [ActivityID: E-Lg5QAzISFRsc-L9NKmChTrRH8NHlmmduqiHLWTh-A] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 10:27:13.547] [info] [View Report] [ActivityID: E-Lg5QAzISFRsc-L9NKmChTrRH8NHlmmduqiHLWTh-A] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 10:28:09.253] [info] [View Report] [ActivityID: E-Lg5QAzISFRsc-L9NKmChTrRH8NHlmmduqiHLWTh-A] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 10:28:40.039] [info] [View Report] [ActivityID: E-Lg5QAzISFRsc-L9NKmChTrRH8NHlmmduqiHLWTh-A] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 10:30:08.965] [info] [View Report] [ActivityID: E-Lg5QAzISFRsc-L9NKmChTrRH8NHlmmduqiHLWTh-A] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 10:33:37.667] [info] [View Report] [ActivityID: E-Lg5QAzISFRsc-L9NKmChTrRH8NHlmmduqiHLWTh-A] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 10:35:38.529] [info] [View Report] [ActivityID: E-Lg5QAzISFRsc-L9NKmChTrRH8NHlmmduqiHLWTh-A] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 10:37:35.853] [info] [View Report] [ActivityID: E-Lg5QAzISFRsc-L9NKmChTrRH8NHlmmduqiHLWTh-A] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 10:43:10.860] [info] [View Report] [ActivityID: E-Lg5QAzISFRsc-L9NKmChTrRH8NHlmmduqiHLWTh-A] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 10:43:13.800] [error] [GET - Not Found - /download/1603374473677-file.pdf - ::ffff:127.0.0.1] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 10:43:25.286] [error] [GET - Not Found - /download/1603374473677-file.pdf - ::ffff:127.0.0.1] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 10:43:48.298] [error] [GET - Not Found - /download/1605548320035-file.pdf - ::ffff:127.0.0.1] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 10:45:00.207] [info] [Download Report] [ActivityID: E-Lg5QAzISFRsc-L9NKmChTrRH8NHlmmduqiHLWTh-A] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 10:52:46.140] [error] [uncaughtException: Cannot find module './routes/api/reports.get'
+Require stack:
+- /home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/server.js
+Error: Cannot find module './routes/api/reports.get'
+Require stack:
+- /home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/server.js
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:957:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:840:27)
+    at Module.require (internal/modules/cjs/loader.js:1019:19)
+    at require (internal/modules/cjs/helpers.js:77:18)
+    at Object.<anonymous> (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/server.js:35:25)
+    at Module._compile (internal/modules/cjs/loader.js:1133:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1153:10)
+    at Module.load (internal/modules/cjs/loader.js:977:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:877:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)
+    at internal/main/run_main_module.js:18:47] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 10:54:24.233] [info] [View Report] [ActivityID: E-Lg5QAzISFRsc-L9NKmChTrRH8NHlmmduqiHLWTh-A] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 10:57:32.721] [info] [View Report] [ActivityID: E-Lg5QAzISFRsc-L9NKmChTrRH8NHlmmduqiHLWTh-A] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 10:57:36.502] [info] [View Report] [ActivityID: E-Lg5QAzISFRsc-L9NKmChTrRH8NHlmmduqiHLWTh-A] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 11:04:55.813] [info] [User Logged in] [ActivityID: S8gDUamuseOdct8P6NNMeGjYo7NOa9M8WEty0Frtfaw] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [auth.js]
+[2020-11-18 11:12:59.778] [error] [uncaughtException: app is not defined
+ReferenceError: app is not defined
+    at Object.<anonymous> (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/routes/api/reports.js:90:1)
+    at Module._compile (internal/modules/cjs/loader.js:1133:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1153:10)
+    at Module.load (internal/modules/cjs/loader.js:977:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:877:14)
+    at Module.require (internal/modules/cjs/loader.js:1019:19)
+    at require (internal/modules/cjs/helpers.js:77:18)
+    at Object.<anonymous> (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/server.js:35:25)
+    at Module._compile (internal/modules/cjs/loader.js:1133:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1153:10)
+    at Module.load (internal/modules/cjs/loader.js:977:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:877:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)
+    at internal/main/run_main_module.js:18:47] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 11:13:52.817] [error] [GET - path is not defined - /api/reports/fileview/1603374473677-file.pdf - ::ffff:127.0.0.1] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 11:17:27.171] [error] [GET - path is not defined - /api/reports/fileview/1603374473677-file.pdf - ::ffff:127.0.0.1] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 11:20:57.547] [error] [GET - path is not defined - /api/reports/fileview/1603374473677-file.pdf - ::ffff:127.0.0.1] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 11:21:12.231] [error] [GET - path is not defined - /api/reports/fileview/1603374473677-file.pdf - ::ffff:127.0.0.1] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 11:21:47.974] [error] [GET - path is not defined - /api/reports/fileview/1603374473677-file.pdf - ::1] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 11:23:17.190] [info] [Download Report] [ActivityID: S8gDUamuseOdct8P6NNMeGjYo7NOa9M8WEty0Frtfaw] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 11:24:12.507] [info] [View Report] [ActivityID: S8gDUamuseOdct8P6NNMeGjYo7NOa9M8WEty0Frtfaw] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 11:24:12.511] [error] [GET - ENOENT: no such file or directory, stat '/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/routes/api/uploads/1603374473677-file.pdf' - /api/reports/fileview/1603374473677-file.pdf - ::ffff:127.0.0.1] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 11:24:20.046] [info] [View Report] [ActivityID: S8gDUamuseOdct8P6NNMeGjYo7NOa9M8WEty0Frtfaw] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 11:24:20.047] [error] [GET - ENOENT: no such file or directory, stat '/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/routes/api/uploads/1603374473677-file.pdf' - /api/reports/fileview/1603374473677-file.pdf - ::ffff:127.0.0.1] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 11:25:22.255] [error] [GET - path must be absolute or specify root to res.sendFile - /api/reports/fileview/1603374473677-file.pdf - ::ffff:127.0.0.1] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 11:28:59.538] [info] [View Report] [ActivityID: S8gDUamuseOdct8P6NNMeGjYo7NOa9M8WEty0Frtfaw] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 11:29:28.339] [error] [uncaughtException: app is not defined
+ReferenceError: app is not defined
+    at Object.<anonymous> (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/routes/api/reports.js:33:1)
+    at Module._compile (internal/modules/cjs/loader.js:1133:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1153:10)
+    at Module.load (internal/modules/cjs/loader.js:977:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:877:14)
+    at Module.require (internal/modules/cjs/loader.js:1019:19)
+    at require (internal/modules/cjs/helpers.js:77:18)
+    at Object.<anonymous> (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/server.js:35:25)
+    at Module._compile (internal/modules/cjs/loader.js:1133:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1153:10)
+    at Module.load (internal/modules/cjs/loader.js:977:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:877:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)
+    at internal/main/run_main_module.js:18:47] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 11:29:48.646] [error] [GET - Not Found - /filedownload/1603374473677-file.pdf - ::ffff:127.0.0.1] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 11:30:55.454] [info] [Download Report] [ActivityID: S8gDUamuseOdct8P6NNMeGjYo7NOa9M8WEty0Frtfaw] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 11:30:55.458] [error] [GET - ENOENT: no such file or directory, stat '/home/sravya/SPEW/sem3/uploads/1603374473677-file.pdf' - /api/reports/filedownload/1603374473677-file.pdf - ::ffff:127.0.0.1] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 11:31:52.866] [info] [Download Report] [ActivityID: S8gDUamuseOdct8P6NNMeGjYo7NOa9M8WEty0Frtfaw] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 11:35:56.108] [error] [uncaughtException: Identifier 'auth' has already been declared
+/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/routes/api/reports.js:10
+function auth(req, res, next) {
+^
+
+SyntaxError: Identifier 'auth' has already been declared
+    at wrapSafe (internal/modules/cjs/loader.js:1047:16)
+    at Module._compile (internal/modules/cjs/loader.js:1097:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1153:10)
+    at Module.load (internal/modules/cjs/loader.js:977:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:877:14)
+    at Module.require (internal/modules/cjs/loader.js:1019:19)
+    at require (internal/modules/cjs/helpers.js:77:18)
+    at Object.<anonymous> (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/server.js:34:25)
+    at Module._compile (internal/modules/cjs/loader.js:1133:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1153:10)
+    at Module.load (internal/modules/cjs/loader.js:977:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:877:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)
+    at internal/main/run_main_module.js:18:47] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 11:35:58.289] [error] [uncaughtException: Identifier 'auth' has already been declared
+/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/routes/api/reports.js:10
+function auth(req, res, next) {
+^
+
+SyntaxError: Identifier 'auth' has already been declared
+    at wrapSafe (internal/modules/cjs/loader.js:1047:16)
+    at Module._compile (internal/modules/cjs/loader.js:1097:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1153:10)
+    at Module.load (internal/modules/cjs/loader.js:977:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:877:14)
+    at Module.require (internal/modules/cjs/loader.js:1019:19)
+    at require (internal/modules/cjs/helpers.js:77:18)
+    at Object.<anonymous> (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/server.js:34:25)
+    at Module._compile (internal/modules/cjs/loader.js:1133:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1153:10)
+    at Module.load (internal/modules/cjs/loader.js:977:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:877:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)
+    at internal/main/run_main_module.js:18:47] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 11:38:11.114] [error] [uncaughtException: Unexpected token ';'
+/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/routes/api/reports.js:13
+		userType : (req.user.role == "admin")?"Admin":((req.user.email).includes("@iiitb")?"Insider":"Outsider");
+		                                                                                                        ^
+
+SyntaxError: Unexpected token ';'
+    at wrapSafe (internal/modules/cjs/loader.js:1047:16)
+    at Module._compile (internal/modules/cjs/loader.js:1097:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1153:10)
+    at Module.load (internal/modules/cjs/loader.js:977:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:877:14)
+    at Module.require (internal/modules/cjs/loader.js:1019:19)
+    at require (internal/modules/cjs/helpers.js:77:18)
+    at Object.<anonymous> (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/server.js:34:25)
+    at Module._compile (internal/modules/cjs/loader.js:1133:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1153:10)
+    at Module.load (internal/modules/cjs/loader.js:977:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:877:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:74:12)
+    at internal/main/run_main_module.js:18:47] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 11:38:52.222] [info] [View Report] [ActivityID: S8gDUamuseOdct8P6NNMeGjYo7NOa9M8WEty0Frtfaw] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 11:40:41.375] [info] [View Report] [ActivityID: S8gDUamuseOdct8P6NNMeGjYo7NOa9M8WEty0Frtfaw] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 11:42:00.083] [info] [View Report] [ActivityID: S8gDUamuseOdct8P6NNMeGjYo7NOa9M8WEty0Frtfaw] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 11:43:35.605] [error] [GET - file is not defined - /api/reports/filedownload/1603374473677-file.pdf - ::ffff:127.0.0.1] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 11:43:37.550] [error] [GET - file is not defined - /api/reports/filedownload/1603374473677-file.pdf - ::ffff:127.0.0.1] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 11:44:59.600] [info] [Download Report] [ActivityID: S8gDUamuseOdct8P6NNMeGjYo7NOa9M8WEty0Frtfaw] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 11:45:24.306] [info] [Download Report] [ActivityID: S8gDUamuseOdct8P6NNMeGjYo7NOa9M8WEty0Frtfaw] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 11:50:54.002] [info] [View Report] [ActivityID: S8gDUamuseOdct8P6NNMeGjYo7NOa9M8WEty0Frtfaw] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 11:50:54.005] [error] [uncaughtException: ENOENT: no such file or directory, stat '/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/uploads/1603971363080-file.pdf'
+Error: ENOENT: no such file or directory, stat '/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/uploads/1603971363080-file.pdf'] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 11:52:09.831] [info] [View Report] [ActivityID: S8gDUamuseOdct8P6NNMeGjYo7NOa9M8WEty0Frtfaw] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 11:54:09.575] [error] [uncaughtException: logs is not defined
+ReferenceError: logs is not defined
+    at /home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/routes/api/reports.js:42:58
+    at /home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/node_modules/express/lib/response.js:434:22
+    at SendStream.onerror (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/node_modules/express/lib/response.js:1044:5)
+    at SendStream.emit (events.js:310:20)
+    at SendStream.error (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/node_modules/send/index.js:270:17)
+    at SendStream.onStatError (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/node_modules/send/index.js:421:12)
+    at onstat (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/node_modules/send/index.js:726:26)
+    at FSReqCallback.oncomplete (fs.js:167:21)] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 11:55:18.216] [info] [User Logged in] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [auth.js]
+[2020-11-18 11:55:22.675] [info] [View Report] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 11:55:27.527] [error] [uncaughtException: logs is not defined
+ReferenceError: logs is not defined
+    at /home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/routes/api/reports.js:42:58
+    at /home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/node_modules/express/lib/response.js:434:22
+    at SendStream.onerror (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/node_modules/express/lib/response.js:1044:5)
+    at SendStream.emit (events.js:310:20)
+    at SendStream.error (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/node_modules/send/index.js:270:17)
+    at SendStream.onStatError (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/node_modules/send/index.js:421:12)
+    at onstat (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/node_modules/send/index.js:726:26)
+    at FSReqCallback.oncomplete (fs.js:167:21)] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 11:56:06.541] [error] [uncaughtException: logs is not defined
+ReferenceError: logs is not defined
+    at /home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/routes/api/reports.js:41:58
+    at /home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/node_modules/express/lib/response.js:434:22
+    at SendStream.onerror (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/node_modules/express/lib/response.js:1044:5)
+    at SendStream.emit (events.js:310:20)
+    at SendStream.error (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/node_modules/send/index.js:270:17)
+    at SendStream.onStatError (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/node_modules/send/index.js:421:12)
+    at onstat (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/node_modules/send/index.js:726:26)
+    at FSReqCallback.oncomplete (fs.js:167:21)] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 11:57:02.371] [error] [uncaughtException: logs is not defined
+ReferenceError: logs is not defined
+    at /home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/routes/api/reports.js:41:58
+    at /home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/node_modules/express/lib/response.js:434:22
+    at SendStream.onerror (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/node_modules/express/lib/response.js:1044:5)
+    at SendStream.emit (events.js:310:20)
+    at SendStream.error (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/node_modules/send/index.js:270:17)
+    at SendStream.onStatError (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/node_modules/send/index.js:421:12)
+    at onstat (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/node_modules/send/index.js:726:26)
+    at FSReqCallback.oncomplete (fs.js:167:21)] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 11:58:56.317] [error] [uncaughtException: logs is not defined
+ReferenceError: logs is not defined
+    at /home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/routes/api/reports.js:41:58
+    at /home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/node_modules/express/lib/response.js:434:22
+    at SendStream.onerror (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/node_modules/express/lib/response.js:1044:5)
+    at SendStream.emit (events.js:310:20)
+    at SendStream.error (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/node_modules/send/index.js:270:17)
+    at SendStream.onStatError (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/node_modules/send/index.js:421:12)
+    at onstat (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/node_modules/send/index.js:726:26)
+    at FSReqCallback.oncomplete (fs.js:167:21)] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 12:01:09.115] [error] [uncaughtException: logs is not defined
+ReferenceError: logs is not defined
+    at /home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/routes/api/reports.js:41:58
+    at /home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/node_modules/express/lib/response.js:434:22
+    at SendStream.onerror (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/node_modules/express/lib/response.js:1044:5)
+    at SendStream.emit (events.js:310:20)
+    at SendStream.error (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/node_modules/send/index.js:270:17)
+    at SendStream.onStatError (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/node_modules/send/index.js:421:12)
+    at onstat (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/node_modules/send/index.js:726:26)
+    at FSReqCallback.oncomplete (fs.js:167:21)] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 12:01:47.037] [error] [View Report - file not found] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 12:02:05.039] [error] [View Report - file not found] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 12:02:06.849] [info] [View Report] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 12:04:12.697] [error] [Download Report - file not found] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 12:04:20.318] [info] [Download Report] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 12:15:47.097] [error] [GET - logger is not a function - /api/reports/fileview/1603971363080-file.pdf - ::ffff:127.0.0.1] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 12:16:20.550] [error] [GET - logger is not a function - /api/reports/fileview/1603971363080-file.pdf - ::ffff:127.0.0.1] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 12:16:54.577] [info] [undefined] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 12:16:54.583] [info] [warning] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 12:16:54.584] [error] [View Report - file not found] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 12:18:09.545] [error] [GET - logger.input is not a function - /api/reports/fileview/1603971363080-file.pdf - ::ffff:127.0.0.1] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 12:18:45.994] [error] [View Report - file not found] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 12:20:13.966] [error] [View Report - file not found] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 12:21:10.966] [info] [View Report] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 12:21:18.829] [error] [View Report - file not found] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 12:24:37.439] [warn] [Information message] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 12:24:37.445] [info] [View Report] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 12:25:31.205] [info] [View Report] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 12:25:31.216] [info] [View Report] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 12:26:44.817] [info] [View Report] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 12:26:44.828] [info] [View Report] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 12:27:18.026] [info] [View Report] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 12:27:18.029] [info] [View Report] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 12:28:18.955] [info] [View Report] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 12:28:41.033] [info] [View Report] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 12:29:39.499] [error] [View Report - file not found] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 12:30:04.991] [error] [View Report - file not found] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 12:32:02.725] [error] [uncaughtException: Cannot use import statement outside a module
+/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/client/src/actions/authActions.js:1
+import axios from 'axios';
+^^^^^^
+
+SyntaxError: Cannot use import statement outside a module
+    at wrapSafe (internal/modules/cjs/loader.js:1047:16)
+    at Module._compile (internal/modules/cjs/loader.js:1097:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1153:10)
+    at Module.load (internal/modules/cjs/loader.js:977:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:877:14)
+    at Module.require (internal/modules/cjs/loader.js:1019:19)
+    at require (internal/modules/cjs/helpers.js:77:18)
+    at Object.<anonymous> (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/routes/api/reports.js:9:19)
+    at Module._compile (internal/modules/cjs/loader.js:1133:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1153:10)
+    at Module.load (internal/modules/cjs/loader.js:977:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:877:14)
+    at Module.require (internal/modules/cjs/loader.js:1019:19)
+    at require (internal/modules/cjs/helpers.js:77:18)
+    at Object.<anonymous> (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/server.js:34:25)
+    at Module._compile (internal/modules/cjs/loader.js:1133:30)] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 12:32:08.665] [error] [uncaughtException: Cannot use import statement outside a module
+/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/client/src/actions/authActions.js:1
+import axios from 'axios';
+^^^^^^
+
+SyntaxError: Cannot use import statement outside a module
+    at wrapSafe (internal/modules/cjs/loader.js:1047:16)
+    at Module._compile (internal/modules/cjs/loader.js:1097:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1153:10)
+    at Module.load (internal/modules/cjs/loader.js:977:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:877:14)
+    at Module.require (internal/modules/cjs/loader.js:1019:19)
+    at require (internal/modules/cjs/helpers.js:77:18)
+    at Object.<anonymous> (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/routes/api/reports.js:9:19)
+    at Module._compile (internal/modules/cjs/loader.js:1133:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1153:10)
+    at Module.load (internal/modules/cjs/loader.js:977:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:877:14)
+    at Module.require (internal/modules/cjs/loader.js:1019:19)
+    at require (internal/modules/cjs/helpers.js:77:18)
+    at Object.<anonymous> (/home/sravya/SPEW/sem3/open source/OpenSourceReportsStore/server.js:34:25)
+    at Module._compile (internal/modules/cjs/loader.js:1133:30)] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-18 12:38:36.399] [info] [View Report] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 12:42:50.012] [info] [View Report] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 12:43:55.147] [info] [View Report] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 12:46:38.313] [info] [View Report - 5f918d89ef12f435a76d2240] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 12:46:52.427] [info] [View Report - 5f918d89ef12f435a76d2240] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 12:46:52.430] [info] [View Report - 5f918d89ef12f435a76d2240] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 12:46:52.466] [info] [View Report - 5f918dfa63cd09361fa5f21f] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 12:46:52.832] [info] [View Report - 5f918dfa63cd09361fa5f21f] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 12:46:53.246] [info] [View Report - 5f918dfa63cd09361fa5f21f] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 12:48:37.325] [info] [View Report] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 12:48:59.654] [info] [Download Report] [ActivityID: GDD7b5IAcRS8QOpbIl2rO55iUPeKvbMUnkoolSH_jGc] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-18 12:49:24.700] [info] [User Logged in] [ActivityID: N4v5Vp8VwNMDNPqiYo_5Bzl-iNU3_rimja0B-b-rQl8] [UserID: 5f831f7a94071d09bb6cbdfa] [Admin] [Nathan Scott] [nathan@gmail.com] [auth.js]
+[2020-11-18 12:49:34.401] [info] [Deleted Report - 5fb2b92023a82231e0d62c62] [ActivityID: N4v5Vp8VwNMDNPqiYo_5Bzl-iNU3_rimja0B-b-rQl8] [UserID: 5f831f7a94071d09bb6cbdfa] [Admin] [Nathan Scott] [nathan@gmail.com] [report.js]
+[2020-11-18 12:50:17.191] [error] [Adding Report Failed] [ActivityID: N4v5Vp8VwNMDNPqiYo_5Bzl-iNU3_rimja0B-b-rQl8] [UserID: 5f831f7a94071d09bb6cbdfa] [Admin] [Nathan Scott] [nathan@gmail.com] [report.js]
+[2020-11-18 12:50:57.278] [error] [Adding Report Failed] [ActivityID: N4v5Vp8VwNMDNPqiYo_5Bzl-iNU3_rimja0B-b-rQl8] [UserID: 5f831f7a94071d09bb6cbdfa] [Admin] [Nathan Scott] [nathan@gmail.com] [report.js]
+[2020-11-18 12:52:45.468] [info] [Added Report] [ActivityID: N4v5Vp8VwNMDNPqiYo_5Bzl-iNU3_rimja0B-b-rQl8] [UserID: 5f831f7a94071d09bb6cbdfa] [Admin] [Nathan Scott] [nathan@gmail.com] [report.js]
+[2020-11-18 13:05:40.204] [info] [View Report 1603374473677-file.pdf] [ActivityID: N4v5Vp8VwNMDNPqiYo_5Bzl-iNU3_rimja0B-b-rQl8] [UserID: 5f831f7a94071d09bb6cbdfa] [Admin] [Nathan Scott] [nathan@gmail.com] [report.js]
+[2020-11-18 13:05:48.692] [info] [Download Report 1603374473677-file.pdf] [ActivityID: N4v5Vp8VwNMDNPqiYo_5Bzl-iNU3_rimja0B-b-rQl8] [UserID: 5f831f7a94071d09bb6cbdfa] [Admin] [Nathan Scott] [nathan@gmail.com] [report.js]
+[2020-11-18 13:06:33.723] [error] [View Report - file not found 1603971417322-file.pdf] [ActivityID: N4v5Vp8VwNMDNPqiYo_5Bzl-iNU3_rimja0B-b-rQl8] [UserID: 5f831f7a94071d09bb6cbdfa] [Admin] [Nathan Scott] [nathan@gmail.com] [report.js]
+[2020-11-21 05:13:32.176] [info] [User Logged in] [ActivityID: 38AR8Xsw0ebQLYTfiOaSrPdmTbbWWAs7YjRzqxrpb3A] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [auth.js]
+[2020-11-21 05:13:34.810] [error] [View Report - file not found 1603971283256-file.pdf] [ActivityID: 38AR8Xsw0ebQLYTfiOaSrPdmTbbWWAs7YjRzqxrpb3A] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-21 05:13:35.912] [error] [View Report - file not found 1603971283256-file.pdf] [ActivityID: 38AR8Xsw0ebQLYTfiOaSrPdmTbbWWAs7YjRzqxrpb3A] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-21 05:13:37.167] [error] [Download Report - file not found 1603971283256-file.pdf] [ActivityID: 38AR8Xsw0ebQLYTfiOaSrPdmTbbWWAs7YjRzqxrpb3A] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-21 05:13:38.333] [error] [View Report - file not found 1603971283256-file.pdf] [ActivityID: 38AR8Xsw0ebQLYTfiOaSrPdmTbbWWAs7YjRzqxrpb3A] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-21 05:13:39.614] [info] [View Report 1603446093734-file.pdf] [ActivityID: 38AR8Xsw0ebQLYTfiOaSrPdmTbbWWAs7YjRzqxrpb3A] [UserID: 5f8839d5ed35250e440ca1b9] [Insider] [SRAVYA M] [sravya.m@iiitb.org] [report.js]
+[2020-11-21 05:16:34.536] [info] [User Logged in] [ActivityID: MrJ9_b4T8zh97ssEgM8bO4dOo4VTcsM_c9vyAthqzLc] [UserID: 5f831f7a94071d09bb6cbdfa] [Admin] [Nathan Scott] [nathan@gmail.com] [auth.js]
+[2020-11-21 05:16:38.148] [info] [Deleted Report - 5f9aa923edaf0112fa2eab2d] [ActivityID: MrJ9_b4T8zh97ssEgM8bO4dOo4VTcsM_c9vyAthqzLc] [UserID: 5f831f7a94071d09bb6cbdfa] [Admin] [Nathan Scott] [nathan@gmail.com] [report.js]
+[2020-11-21 05:16:38.154] [error] [uncaughtException: ENOENT: no such file or directory, unlink 'uploads/1603971363080-file.pdf'
+Error: ENOENT: no such file or directory, unlink 'uploads/1603971363080-file.pdf'] [ActivityID: undefined] [UserID: undefined] [undefined] [undefined] [undefined] [undefined]
+[2020-11-21 05:23:54.709] [info] [View Report 1603374473677-file.pdf] [ActivityID: MrJ9_b4T8zh97ssEgM8bO4dOo4VTcsM_c9vyAthqzLc] [UserID: 5f831f7a94071d09bb6cbdfa] [Admin] [Nathan Scott] [nathan@gmail.com] [report.js]
+[2020-11-21 05:23:58.007] [error] [View Report - file not found 1603971283256-file.pdf] [ActivityID: MrJ9_b4T8zh97ssEgM8bO4dOo4VTcsM_c9vyAthqzLc] [UserID: 5f831f7a94071d09bb6cbdfa] [Admin] [Nathan Scott] [nathan@gmail.com] [report.js]
+[2020-11-21 05:24:00.887] [info] [Deleted Report - 5f9aa8d3edaf0112fa2eab2c] [ActivityID: MrJ9_b4T8zh97ssEgM8bO4dOo4VTcsM_c9vyAthqzLc] [UserID: 5f831f7a94071d09bb6cbdfa] [Admin] [Nathan Scott] [nathan@gmail.com] [report.js]
+[2020-11-21 05:24:00.888] [error] [Delete Report - file unavailable] [ActivityID: MrJ9_b4T8zh97ssEgM8bO4dOo4VTcsM_c9vyAthqzLc] [UserID: 5f831f7a94071d09bb6cbdfa] [Admin] [Nathan Scott] [nathan@gmail.com] [report.js]

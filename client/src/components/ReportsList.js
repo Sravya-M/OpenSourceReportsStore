@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Pagination from './Pagination';
 
-import { getReports, deleteReport } from '../actions/ReportActions';
+import { getReports, deleteReport, viewReport, downloadReport } from '../actions/ReportActions';
 import ReportModal from './ReportModal';
 class ReportsList extends Component {
 
@@ -96,15 +96,31 @@ class ReportsList extends Component {
 		);
 	}
 
+	onView = (e) => {
+		e.preventDefault();
+
+		const filename=e.target.href.split('/')[3];
+		this.props.viewReport(filename)
+	}
+
+	onDownload = (e) => {
+		e.preventDefault();
+
+		const filename=e.target.href.split('/')[3];
+		this.props.downloadReport(filename)
+	}
+
 	display = searchReports => {
 
 		//console.log(searchReports);
+		/*
 		const webpackContext = require.context(
 			"../../../uploads",
 			false,
 			/\.(pdf|PDF)$/
 		);
 		const files = this.importAll(webpackContext);
+		*/
 
 		const indexOfLastPost = this.state.currentPage * this.state.postsPerPage;
 		const indexOfFirstPost = indexOfLastPost - this.state.postsPerPage;
@@ -147,8 +163,8 @@ class ReportsList extends Component {
 										{tag[0].split(",").map((val) => <button onClick={this.searchSpace.bind(this)} class="table-tags"> {val} </button>)}
 									</ul>
 								</td>
-								<td><a href={files[`${path}`]} target="_blank" rel="noopener noreferrer">View</a>&nbsp;&nbsp;&nbsp;&nbsp;
-							<a href={files[`${path}`]} download title="Download">&darr;</a></td>
+								<td><a href={path} target="_blank" onClick={this.onView} rel="noopener noreferrer">View</a>&nbsp;&nbsp;&nbsp;&nbsp;
+							<a href={path} download onClick={this.onDownload} title="Download">&darr;</a></td>
 							</tr>
 
 						))
@@ -248,4 +264,4 @@ const mapStateToProps = (state) => ({
 	isAuthenticated: state.auth.isAuthenticated,
 	isAdmin: state.auth.isAdmin
 });
-export default connect(mapStateToProps, { getReports, deleteReport })(ReportsList);
+export default connect(mapStateToProps, { getReports, deleteReport, viewReport, downloadReport })(ReportsList);
