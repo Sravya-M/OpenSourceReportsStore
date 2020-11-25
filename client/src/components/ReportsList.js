@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { ListGroup, ListGroupItem, Button, Table, Input } from 'reactstrap';
+import { ListGroup, ListGroupItem, Button, Table, Input , Container} from 'reactstrap';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Pagination from './Pagination';
 
-import { getReports, deleteReport } from '../actions/ReportActions';
+import { getReports, deleteReport, viewReport, downloadReport } from '../actions/ReportActions';
 import ReportModal from './ReportModal';
 class ReportsList extends Component {
 
@@ -96,15 +96,31 @@ class ReportsList extends Component {
 		);
 	}
 
+	onView = (e) => {
+		e.preventDefault();
+
+		const filename=e.target.href.split('/')[3];
+		this.props.viewReport(filename)
+	}
+
+	onDownload = (e) => {
+		e.preventDefault();
+
+		const filename=e.target.href.split('/')[3];
+		this.props.downloadReport(filename)
+	}
+
 	display = searchReports => {
 
 		//console.log(searchReports);
+		/*
 		const webpackContext = require.context(
 			"../../../uploads",
 			false,
 			/\.(pdf|PDF)$/
 		);
 		const files = this.importAll(webpackContext);
+		*/
 
 		const indexOfLastPost = this.state.currentPage * this.state.postsPerPage;
 		const indexOfFirstPost = indexOfLastPost - this.state.postsPerPage;
@@ -143,12 +159,12 @@ class ReportsList extends Component {
 								<td>{category}</td>
 
 								<td>
-
-									{tag[0].split(",").map((val) => <Button onClick={this.searchSpace.bind(this)} outline color="secondary" size="sm"> {val} </Button>)}
-
+									<ul className="input-tag__tags">
+										{tag[0].split(",").map((val) => <button onClick={this.searchSpace.bind(this)} class="table-tags"> {val} </button>)}
+									</ul>
 								</td>
-								<td><a href={files[`${path}`]} target="_blank" rel="noopener noreferrer">View</a>&nbsp;&nbsp;&nbsp;&nbsp;
-							<a href={files[`${path}`]} download title="Download">&darr;</a></td>
+								<td><a href={path} target="_blank" onClick={this.onView} rel="noopener noreferrer">View</a>&nbsp;&nbsp;&nbsp;&nbsp;
+							<a href={path} download onClick={this.onDownload} title="Download">&darr;</a></td>
 							</tr>
 
 						))
@@ -196,41 +212,47 @@ class ReportsList extends Component {
 		return (
 			<center>
 				{this.props.isAuthenticated ?
-					<ListGroup>
-						<TransitionGroup className="reports-list" width="100%">
-							<CSSTransition timeout={500} classNames="fade">
-								<ListGroupItem>
-									<div class="search-bar">
-										<div className="searchForm">
-											<ReportModal />
-											<div className="ml-auto"><Input
-												type="text"
-												placeholder="Search ..."
-												onKeyDown={this.handleEnter}
-											/></div>
-										</div>
-										<div className="input-tag">
-											<ul className="input-tag__tags">
-												{this.state.search.map((tag, i) => (
-													<li key={tag}>
-														{tag}
-														<button type="button" onClick={() => { this.removeTag(i); }}>+</button>
-													</li>
-												))}
-											</ul>
-										</div>
+					<div class="wrapper">
+					<Container>
+					<div class="content" expand="sm">
+						<ListGroup>
+							<TransitionGroup className="reports-list" width="100%">
+								<CSSTransition timeout={500} classNames="fade">
+									<ListGroupItem>
+										<div class="search-bar">
+											<div className="searchForm">
+												<ReportModal />
+												<div className="ml-auto"><Input
+													type="text"
+													placeholder="Search ..."
+													onKeyDown={this.handleEnter}
+												/></div>
+											</div>
+											<div className="input-tag">
+												<ul className="input-tag__tags">
+													{this.state.search.map((tag, i) => (
+														<li key={tag}>
+															{tag}
+															<button type="button" onClick={() => { this.removeTag(i); }}>+</button>
+														</li>
+													))}
+												</ul>
+											</div>
 
-									</div>
-									<div>
-										{reports.length === 0 ? <th> No data to display </th> :
-											this.filter(reports)
-										}
-									</div>
-								</ListGroupItem>
+										</div>
+										<div>
+											{reports.length === 0 ? <th> No data to display </th> :
+												this.filter(reports)
+											}
+										</div>
+									</ListGroupItem>
 
-							</CSSTransition>
-						</TransitionGroup>
-					</ListGroup>
+								</CSSTransition>
+							</TransitionGroup>
+						</ListGroup>
+					</div>
+					</Container>
+					</div>
 					: null}
 			</center>
 		);
@@ -242,4 +264,4 @@ const mapStateToProps = (state) => ({
 	isAuthenticated: state.auth.isAuthenticated,
 	isAdmin: state.auth.isAdmin
 });
-export default connect(mapStateToProps, { getReports, deleteReport })(ReportsList);
+export default connect(mapStateToProps, { getReports, deleteReport, viewReport, downloadReport })(ReportsList);

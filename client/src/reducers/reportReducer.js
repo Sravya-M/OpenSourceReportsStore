@@ -1,9 +1,10 @@
 // Actual state is going go here
 // Check actions here (getItemAction, addItemAction)
-import { GET_REPORTS, ADD_REPORT, DELETE_REPORT, REPORTS_LOADING } from '../actions/types';
+import { GET_REPORTS, ADD_REPORT, DELETE_REPORT, REPORTS_LOADING , VIEW_REPORT, DOWNLOAD_REPORT} from '../actions/types';
 
 const initialState = {
 	reports: [],
+	file: null,
 	loading: false
 }
 
@@ -29,6 +30,16 @@ export default function (state = initialState, action) {
 			return {
 				...state,
 				loading: true
+			};
+		case VIEW_REPORT:
+			return {
+				...state,
+				file: action.payload
+			};
+		case DOWNLOAD_REPORT:
+			return {
+				...state,
+				file: action.payload
 			};
 		default:
 			return state;

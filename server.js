@@ -5,6 +5,7 @@ const config = require('config');
 const app = express();
 var cors = require('cors')
 var logger = require('./logs_config/winston');
+const createError = require('http-errors');
 
 const bodyParser = require('body-parser');
 
@@ -58,7 +59,7 @@ app.use(function(err, req, res, next) {
 	res.locals.message = err.message;
 	res.locals.error = req.app.get('env') === 'development' ? err : {};
   
-	logger.error(`${req.method} - ${err.message}  - ${req.originalUrl} - ${req.ip}`);
+	logger.error(`${req.method} - ${err.message} - ${req.originalUrl} - ${req.ip}`);
   	
 	  // render the error page
 	res.status(err.status || 500);

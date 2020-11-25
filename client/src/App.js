@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import AppNavbar from './components/AppNavbar';
 import { Provider } from 'react-redux';
 import store from './store';
-import { Container } from 'reactstrap';
 import { loadUser } from './actions/authActions';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -22,14 +21,7 @@ class App extends Component {
         <div className='App'>
           <AppNavbar />
           <HomePage />
-          <div class="wrapper">
-            <Container>
-              <div class="content" expand="sm">
-                  <ReportsList />
-              </div>
-            </Container>
-            
-          </div>
+          <ReportsList />
           <AppFooter />
         </div>
       </Provider>

@@ -18,3 +18,5 @@ export const GET_REPORTS = 'GET_REPORTS';
 export const ADD_REPORT = 'ADD_REPORT';
 export const DELETE_REPORT = 'DELETE_REPORT';
 export const REPORTS_LOADING = 'REPORTS_LOADING';
+export const VIEW_REPORT = 'VIEW_REPORT';
+export const DOWNLOAD_REPORT = 'DOWNLOAD_REPORT';
