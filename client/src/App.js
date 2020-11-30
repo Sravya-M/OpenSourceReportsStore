@@ -11,6 +11,7 @@ import HomePage from './components/HomePage';
 import ReportsList from './components/ReportsList';
 import AppFooter from './components/AppFooter';
 
+
 class App extends Component {
   componentDidMount() {
     store.dispatch(loadUser());
