@@ -38,13 +38,16 @@ router.post('/', (req, res) => {
 				.then(isMatch => {
 					if (!isMatch) return res.status(400).json({ msg: 'Invalid credentials' });
 					jwt.sign(
-						{ id: user.id },
+						{ id: user.id , email: user.email, name: user.name, role:user.role},
 						config.get('jwtSecret'),
 						{ expiresIn: 3600 },
 						(err, token) => {
 							if (err) throw err;
+
 							const activityId = token.split('.')[2];
-							logger.info('User Logged in',{'userId':user.id,'activityId':activityId,'context':'auth.js'});
+							const userType = (user.role == "admin")?"Admin":((user.email).includes("@iiitb")?"Insider":"Outsider")
+							logger.info('User Logged in',{'userId':user.id,'activityId':activityId,'context':'auth.js','userType':userType,'name':user.name,'email':user.email});
+
 							return res.json({
 								token,
 								user: {
@@ -69,6 +72,5 @@ router.get('/user', auth, (req, res) => {
 		.select('-password')
 		.then(user => res.json(user));
 });
-
 
 module.exports = router;

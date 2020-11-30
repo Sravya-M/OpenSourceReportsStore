@@ -3,10 +3,8 @@ import {
 	Collapse,
 	Navbar,
 	NavbarToggler,
-	NavbarBrand,
 	Nav,
 	NavItem,
-	NavLink,
 	Container
 } from 'reactstrap';
 import { connect } from 'react-redux';
@@ -14,7 +12,7 @@ import PropTypes from 'prop-types';
 import RegisterModal from './auth/RegisterModal';
 import Logout from './auth/Logout';
 import LoginModal from './auth/LoginModal';
-import logo from '../images/iiitb_navbar.png'
+import logo from '../icons/iiitb_navbar.png'
 
 class AppNavbar extends Component {
 	state = {
@@ -68,8 +66,7 @@ class AppNavbar extends Component {
 			</Fragment>
 		);
 		return (
-			<div class="header">
-				<Navbar expand="sm" className="mb-2">
+				<Navbar expand="sm" className="header">
 					<Container>
 						<a href="/"><img src={logo} class="img-responsive" alt=""/> </a>
 						
@@ -81,7 +78,6 @@ class AppNavbar extends Component {
 						</Collapse>
 					</Container>
 				</Navbar>
-			</div>
 		);
 
 	}

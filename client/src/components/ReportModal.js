@@ -4,16 +4,12 @@ import {
 	Button,
 	Modal,
 	ModalHeader,
-	ModalBody,
-	Form,
-	FormGroup,
-	Label,
-	Input
+	ModalBody
 } from 'reactstrap';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import AddIcon from '@material-ui/icons/Add';
 import { addReport } from '../actions/ReportActions';
-import axios from 'axios';
 class ReportModal extends Component {
 	constructor(props) {
 		super(props);
@@ -22,7 +18,6 @@ class ReportModal extends Component {
 			studentName: '',
 			professorName: '',
 			category: '',
-			//tags: [],
 			year: '',
 			selectedFile: null,
 			tag: []
@@ -81,8 +76,9 @@ class ReportModal extends Component {
 		data.append("file", this.state.selectedFile);
 		data.append("tag", this.state.tag)
 		this.props.addReport(data);
-		console.log(this.state.tag)
-		this.state.tag = []
+		console.log(this.state.tag);
+		this.setState({tag: []});
+		
 		//Close modal
 		this.toggle();
 	}
@@ -91,10 +87,10 @@ class ReportModal extends Component {
 		return (
 			<div>
 				{this.props.isAuthenticated && this.props.isAdmin ?
-					<Button size="sm"
+					<Button
 						color="dark" title="Add Report"
 						onClick={this.toggle}
-					>Add <b>+</b></Button>
+					><b><AddIcon/></b></Button>
 					:
 					''
 				}
@@ -151,14 +147,16 @@ class ReportModal extends Component {
 									/>
 								</div>
 							</div><br/>
-							<div className="form-group">
+							<div class="col">
 								<input
 									type="file"
 									name=""
 									id=""
 									onChange={this.handleSelectedFile}
+									required
 								/>
-							</div>
+							<label for="file" style={{color:"red"}}>* only pdf less than 2MB</label>
+							</div><br/>
 							<div class="col">
 
 									<label htmlFor="tags">Tags: (press TAB after each tag)</label>
@@ -181,7 +179,7 @@ class ReportModal extends Component {
 						</form>
 					</ModalBody>
 				</Modal>
-			</div >
+			</div>
 		);
 	}
 }

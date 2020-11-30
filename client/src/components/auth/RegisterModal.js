@@ -351,7 +351,6 @@ toggleShow(e) {
                                     onChange={this.onChange}
                                     disabled={this.state.emailDisabled}
                                 />
-								
 
                                 <div id="reload"></div>
                                 <div>

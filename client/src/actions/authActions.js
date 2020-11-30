@@ -108,3 +108,23 @@ export const tokenConfig = getState => {
 
 	return config;
 }
+
+export const sendOTP = (user) => dispatch => {
+	return axios.post('/api/otp/sendOTP', user)
+	.catch(err => {
+		dispatch(returnErrors(err.response.data, err.response.status));
+		dispatch({
+			type: REGISTER_FAIL
+		});
+	})
+};
+
+export const verifyOTP = (user) => dispatch => {
+	return axios.post('/api/otp/sendOTP', user)
+	.catch(err => {
+		dispatch(returnErrors(err.response.data, err.response.status));
+		dispatch({
+			type: REGISTER_FAIL
+		});
+	})
+};
